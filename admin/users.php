@@ -128,7 +128,7 @@ if ($rSettings["sidebar"]) {
                 <!-- end row-->
             </div> <!-- end container -->
             <?php if ((($rPermissions["is_reseller"]) && ($rPermissions["allow_download"])) OR ($rPermissions["is_admin"])) { ?>
-            <div class="modal fade downloadModal" role="dialog" aria-labelledby="downloadLabel" aria-hidden="true" style="display: none;" data-username="" data-password="">
+            <div class="modal fade downloadModal" role="dialog" aria-labelledby="downloadLabel" aria-hidden="true" style="display: none;" data-username="" data-password="" data-token="">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -236,11 +236,12 @@ if ($rSettings["sidebar"]) {
                 }
             });
         }
-        function download(username, password) {
+        function download(username, password, token) {
             $("#download_type").val("");
             $("#download_button").attr("disabled", true);
             $('.downloadModal').data('username', username);
             $('.downloadModal').data('password', password);
+            $('.downloadModal').data('token', token);
             $('.downloadModal').modal('show');
         }
        
