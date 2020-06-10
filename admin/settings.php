@@ -171,6 +171,14 @@ if ((isset($_POST["submit_settings"])) && (hasPermissions("adv", "settings"))) {
         $rAdminSettings["dashboard_stats_frequency"] = $_POST["dashboard_stats_frequency"];
         unset($_POST["dashboard_stats_frequency"]);
     }
+    // if (isset($_POST["site_logo"])) {
+    //     $rAdminSettings["site_logo"] = $_POST["site_logo"];
+    //     unset($_POST["site_logo"]);
+    // }
+    if (isset($_POST["site_title"])) {
+        $rAdminSettings["site_title"] = $_POST["site_title"];
+        unset($_POST["site_title"]);
+    }
     writeAdminSettings();
     foreach($_POST as $rKey => $rValue) {
         if (isset($rArray[$rKey])) {
@@ -395,6 +403,18 @@ if ($rSettings["sidebar"]) {
                                                             <label class="col-md-4 col-form-label" for="crypt_load_balancing">Load Balancing Key</label>
                                                             <div class="col-md-8">
                                                                 <input type="text" class="form-control" id="crypt_load_balancing" name="crypt_load_balancing" value="<?=htmlspecialchars($rSettings["crypt_load_balancing"])?>">
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="form-group row mb-4">
+                                                            <label class="col-md-4 col-form-label" for="site_title">Site Title</label>
+                                                            <div class="col-md-8">
+                                                                <input type="text" class="form-control" id="site_title" name="site_title" value="<?=htmlspecialchars($rSettings["site_title"])?>">
+                                                            </div>
+                                                        </div> -->
+                                                        <div class="form-group row mb-4">
+                                                            <label class="col-md-4 col-form-label" for="site_logo">Site Logo</label>
+                                                            <div class="col-md-8">
+                                                                <input type="text" class="form-control" id="site_logo" name="site_logo" value="<?=htmlspecialchars($rSettings["site_logo"])?>">
                                                             </div>
                                                         </div>
                                                     </div>
