@@ -182,7 +182,7 @@ if ($rType == "users") {
                 } else {
                     $rLastActive = "Never";
                 }
-                $rReturn["data"][] = Array($rRow["id"], $rRow["username"], $rRow["password"], $rRow["owner_name"], $rStatus, $rActive, $rTrial, $rExpDate, $rActiveConnections, $rRow["max_connections"], $rLastActive, $rButtons);
+                $rReturn["data"][] = Array($rRow["id"], $rRow["username"], $rRow["password"], $rRow["login_token"], $rRow["owner_name"], $rStatus, $rActive, $rTrial, $rExpDate, $rActiveConnections, $rRow["max_connections"], $rLastActive, $rButtons);
             }
         }
     }
