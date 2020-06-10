@@ -488,6 +488,18 @@ function generateString($strength = 10) {
     return $random_string;
 }
 
+function generateStringWithExcludedChars($strength = 10, $excludeChars = ['l','I']) {
+    $input = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $input = str_replace($excludeChars, $input);
+    $input_length = strlen($input);
+    $random_string = '';
+    for($i = 0; $i < $strength; $i++) {
+        $random_character = $input[mt_rand(0, $input_length - 1)];
+        $random_string .= $random_character;
+    }
+    return $random_string;
+}
+
 function getStreamingServers($rActive = false) {
     global $db, $rPermissions;
     $return = Array();
@@ -1702,6 +1714,11 @@ function updateTables() {
     if (($rResult) && ($rResult->num_rows == 0)) {
         $db->query("INSERT INTO `admin_settings`(`type`, `value`) VALUES('show_version', 1);");
     }
+    $rResult = $db->query("SHOW COLUMNS FROM `users` LIKE 'login_token';");
+    if (($rResult) && ($rResult->num_rows == 0)) {
+        $db->query("ALTER TABLE `users` ADD COLUMN `login_token` VARCHAR(300) NOT NULL DEFAULT '';");
+    }
+    
 	// Update Categories
 	updateTMDbCategories();
 }
