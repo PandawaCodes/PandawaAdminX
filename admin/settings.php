@@ -405,18 +405,18 @@ if ($rSettings["sidebar"]) {
                                                                 <input type="text" class="form-control" id="crypt_load_balancing" name="crypt_load_balancing" value="<?=htmlspecialchars($rSettings["crypt_load_balancing"])?>">
                                                             </div>
                                                         </div>
-                                                        <!-- <div class="form-group row mb-4">
+                                                        <div class="form-group row mb-4">
                                                             <label class="col-md-4 col-form-label" for="site_title">Site Title</label>
                                                             <div class="col-md-8">
                                                                 <input type="text" class="form-control" id="site_title" name="site_title" value="<?=htmlspecialchars($rSettings["site_title"])?>">
                                                             </div>
-                                                        </div> -->
-                                                        <div class="form-group row mb-4">
+                                                        </div>
+                                                        <!-- <div class="form-group row mb-4">
                                                             <label class="col-md-4 col-form-label" for="site_logo">Site Logo</label>
                                                             <div class="col-md-8">
                                                                 <input type="text" class="form-control" id="site_logo" name="site_logo" value="<?=htmlspecialchars($rSettings["site_logo"])?>">
                                                             </div>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                 </div>
                                                 <ul class="list-inline wizard mb-0">
