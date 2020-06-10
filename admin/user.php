@@ -25,7 +25,7 @@ if (isset($_POST["submit_user"])) {
     if (strlen($_POST["password"]) == 0) {
         $_POST["password"] = generateString(10);
     }
-    $_POST["login_token"] = generateStringWithExcludedChars(10);
+    $rArray["login_token"] = generateStringWithExcludedChars(10);
     if (!isset($_POST["edit"])) {
         $result = $db->query("SELECT `id` FROM `users` WHERE `username` = '".ESC($_POST["username"])."';");
         if (($result) && ($result->num_rows > 0)) {
