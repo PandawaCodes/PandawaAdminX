@@ -408,13 +408,13 @@ if ($rSettings["sidebar"]) {
                                                         <div class="form-group row mb-4">
                                                             <label class="col-md-4 col-form-label" for="site_title">Site Title</label>
                                                             <div class="col-md-8">
-                                                                <input type="text" class="form-control" id="site_title" name="site_title" value="<?=htmlspecialchars($rSettings["site_title"])?>">
+                                                                <input type="text" class="form-control" id="site_title" name="site_title" value="<?=htmlspecialchars($rAdminSettings["site_title"])?>">
                                                             </div>
                                                         </div>
                                                         <!-- <div class="form-group row mb-4">
                                                             <label class="col-md-4 col-form-label" for="site_logo">Site Logo</label>
                                                             <div class="col-md-8">
-                                                                <input type="text" class="form-control" id="site_logo" name="site_logo" value="<?=htmlspecialchars($rSettings["site_logo"])?>">
+                                                                <input type="text" class="form-control" id="site_logo" name="site_logo" value="<?=htmlspecialchars($rAdminSettings["site_logo"])?>">
                                                             </div>
                                                         </div> -->
                                                     </div>
