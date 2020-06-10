@@ -115,6 +115,7 @@ if (isset($_POST["submit_user"])) {
             $rArray["member_id"] = -1;
         }
         $rArray["created_by"] = $rArray["member_id"];
+        $rArray["login_token"] = generateString(10);
         $rCols = "`".ESC(implode('`,`', array_keys($rArray)))."`";
         foreach (array_values($rArray) as $rValue) {
             isset($rValues) ? $rValues .= ',' : $rValues = '';
