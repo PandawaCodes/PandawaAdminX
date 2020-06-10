@@ -1,7 +1,7 @@
 <?php
 include_once("/home/xtreamcodes/iptv_xtream_codes/admin/HTMLPurifier.standalone.php");
 
-$rRelease = 22;             // Official Beta Release Number
+$rRelease = "1.0";             // Official Beta Release Number
 $rEarlyAccess = "F";	   	// Early Access Release
 $rTimeout = 60;             // Seconds Timeout for Functions & Requests
 $rSQLTimeout = 5;           // Max execution time for MySQL queries.
