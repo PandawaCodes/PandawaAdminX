@@ -1495,11 +1495,11 @@ function getFooter() {
     // Don't be a dick. Leave it.
     global $rAdminSettings, $rPermissions, $rSettings, $rRelease, $rEarlyAccess, $_;
     if ($rPermissions["is_admin"]) {
-		if ($rEarlyAccess) {
-			return $_["copyright"]." &copy; ".date("Y")." - <a href=\"https://xtream-ui.com\">Xtream UI</a> R".$rRelease.$rEarlyAccess." - ".$_["early_access"];
-		} else {
-			return $_["copyright"]." &copy; ".date("Y")." - <a href=\"https://xtream-ui.com\">Xtream UI</a> R".$rRelease." - ".$_["free_forever"];
-		}
+        $version = $rRelease . " Based On Xtream UI 22F";
+        if($rAdminSettings['show_version'] == 0) {
+            $version = " Based On Xtream UI 22F";
+        }
+		return $_["copyright"]." &copy; ".date("Y")." - ". $rAdminSettings['site_title'] . " - " . $version;
     } else {
         return $rSettings["copyrights_text"];
     }
@@ -1688,6 +1688,19 @@ function updateTables() {
     $rResult = $db->query("SELECT * FROM `admin_settings` WHERE `type` = 'auto_refresh';");
     if (($rResult) && ($rResult->num_rows == 0)) {
         $db->query("INSERT INTO `admin_settings`(`type`, `value`) VALUES('auto_refresh', 1);");
+    }
+    //added
+    $rResult = $db->query("SELECT * FROM `admin_settings` WHERE `type` = 'site_title';");
+    if (($rResult) && ($rResult->num_rows == 0)) {
+        $db->query("INSERT INTO `admin_settings`(`type`, `value`) VALUES('site_title', 'Xtream UI');");
+    }
+    $rResult = $db->query("SELECT * FROM `admin_settings` WHERE `type` = 'site_logo';");
+    if (($rResult) && ($rResult->num_rows == 0)) {
+        $db->query("INSERT INTO `admin_settings`(`type`, `value`) VALUES('site_logo', '/assets/images/logo.png');");
+    }
+    $rResult = $db->query("SELECT * FROM `admin_settings` WHERE `type` = 'show_version';");
+    if (($rResult) && ($rResult->num_rows == 0)) {
+        $db->query("INSERT INTO `admin_settings`(`type`, `value`) VALUES('show_version', 1);");
     }
 	// Update Categories
 	updateTMDbCategories();

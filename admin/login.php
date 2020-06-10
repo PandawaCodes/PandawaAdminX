@@ -32,7 +32,7 @@ if (!isset($_STATUS)) {
 						$db->query("UPDATE `reg_users` SET `google_2fa_sec` = '".ESC($rSecret)."' WHERE `id` = ".intval($rUserInfo["id"]).";");
 						$rNew2F = true;
 					}
-					$rQR = $rGA->getQRCodeGoogleUrl('Xtream UI', $rUserInfo["google_2fa_sec"]);
+					$rQR = $rGA->getQRCodeGoogleUrl($rAdminSettings['site_title'], $rUserInfo["google_2fa_sec"]);
                     $rAuth = md5($rUserInfo["password"]);
 				} else if ((strlen($_POST["password"]) < intval($rAdminSettings["pass_length"])) && (intval($rAdminSettings["pass_length"]) > 0)) {
 					$rChangePass = md5($rUserInfo["password"]);
@@ -95,7 +95,7 @@ if (!isset($_STATUS)) {
 					$_STATUS = 4;
 				}
 			} else {
-				$rQR = $rGA->getQRCodeGoogleUrl('Xtream UI', $rUserInfo["google_2fa_sec"]);
+				$rQR = $rGA->getQRCodeGoogleUrl($rAdminSettings['site_title'], $rUserInfo["google_2fa_sec"]);
 				$_STATUS = 1;
 			}
 		} else {
@@ -143,7 +143,7 @@ if (!isset($_STATUS)) {
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Xtream UI - <?=$_["login"]?></title>
+        $rAdminSettings['site_title'] - <?=$_["login"]?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
