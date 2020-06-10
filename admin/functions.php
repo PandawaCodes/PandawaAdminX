@@ -1495,7 +1495,7 @@ function getFooter() {
     // Don't be a dick. Leave it.
     global $rAdminSettings, $rPermissions, $rSettings, $rRelease, $rEarlyAccess, $_;
     if ($rPermissions["is_admin"]) {
-        $version = $rRelease . " Based On Xtream UI 22F";
+        $version = "Version : " . $rRelease . " Based On Xtream UI 22F";
         if($rAdminSettings['show_version'] == 0) {
             $version = " Based On Xtream UI 22F";
         }
