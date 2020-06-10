@@ -107,6 +107,7 @@ if ($rSettings["sidebar"]) {
                                             <th class="text-center">ID</th>
                                             <th>Username</th>
                                             <th>Password</th>
+                                            <th>Token</th>
                                             <th>Reseller</th>
                                             <th class="text-center">Status</th>
                                             <th class="text-center">Online</th>
