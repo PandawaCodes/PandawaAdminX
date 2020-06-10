@@ -1,4 +1,4 @@
-# PandawaPanel Based on Xtream UI 22F
+# PandawaPanel Based on 22F
 
 in this version http broadcast, https broadcast port is already changed you need to check the nginx conf by yourself .
 
