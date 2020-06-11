@@ -413,12 +413,12 @@ if ($rSettings["sidebar"]) {?>
                 var value = $("#hwaccel").val();
                 if (value.indexOf("h264_cuvid") >= 0)
                     {
-                        $("#video_codec").val("h264_nvenc");
+                        $("#video_codec").val("h264_nvenc").trigger("change");
 
                     }
                     else if (value.indexOf("hevc_cuvid") >= 0)
                     {
-                        $("#video_codec").val("nvenc_hevc");
+                        $("#video_codec").val("hevc_nvenc").trigger("change");
                      }
 
                 if(value === '')
