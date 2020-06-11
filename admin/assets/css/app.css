@@ -3852,3 +3852,8 @@ table.dataTable tbody > tr.reordered, table.dataTable tbody > tr > .reordered {
     text-overflow: ellipsis;
     max-width: 200px;
 }
+.icon-channel {
+    width: 32px;
+    height: 32px;
+    margin: auto;
+}

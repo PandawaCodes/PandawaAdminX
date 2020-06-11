@@ -1710,6 +1710,10 @@ function updateTables() {
     if (($rResult) && ($rResult->num_rows == 0)) {
         $db->query("INSERT INTO `admin_settings`(`type`, `value`) VALUES('site_logo', '/assets/images/logo.png');");
     }
+    $rResult = $db->query("SELECT * FROM `admin_settings` WHERE `type` = 'site_logo_back';");
+    if (($rResult) && ($rResult->num_rows == 0)) {
+        $db->query("INSERT INTO `admin_settings`(`type`, `value`) VALUES('site_logo_back', '/assets/images/logo-back.png');");
+    }
     $rResult = $db->query("SELECT * FROM `admin_settings` WHERE `type` = 'show_version';");
     if (($rResult) && ($rResult->num_rows == 0)) {
         $db->query("INSERT INTO `admin_settings`(`type`, `value`) VALUES('show_version', 1);");

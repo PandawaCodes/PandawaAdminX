@@ -714,7 +714,7 @@ if ($rType == "users") {
                     $rEPG = '<i class="text-danger far fa-circle"></i>';
                 }
                 if (strlen($rRow["stream_icon"]) > 0) {
-					$rIcon = "<img src='./resize.php?max=32&url=".$rRow["stream_icon"]."' />";
+					$rIcon = "<img src='".$rRow["stream_icon"]."' class='icon-channel' />";
 				} else {
 					$rIcon = "";
 				}

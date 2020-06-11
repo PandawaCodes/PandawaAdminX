@@ -411,12 +411,18 @@ if ($rSettings["sidebar"]) {
                                                                 <input type="text" class="form-control" id="site_title" name="site_title" value="<?=htmlspecialchars($rAdminSettings["site_title"])?>">
                                                             </div>
                                                         </div>
-                                                        <!-- <div class="form-group row mb-4">
+                                                        <div class="form-group row mb-4">
                                                             <label class="col-md-4 col-form-label" for="site_logo">Site Logo</label>
                                                             <div class="col-md-8">
                                                                 <input type="text" class="form-control" id="site_logo" name="site_logo" value="<?=htmlspecialchars($rAdminSettings["site_logo"])?>">
                                                             </div>
-                                                        </div> -->
+                                                        </div>
+                                                        <div class="form-group row mb-4">
+                                                            <label class="col-md-4 col-form-label" for="site_logo_back">Site Logo ( Dark Login Mode )</label>
+                                                            <div class="col-md-8">
+                                                                <input type="text" class="form-control" id="site_logo_back" name="site_logo_back" value="<?=htmlspecialchars($rAdminSettings["site_logo_back"])?>">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <ul class="list-inline wizard mb-0">
