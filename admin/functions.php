@@ -1722,7 +1722,10 @@ function updateTables() {
     if (($rResult) && ($rResult->num_rows == 0)) {
         $db->query("ALTER TABLE `users` ADD COLUMN `login_token` VARCHAR(300) NOT NULL DEFAULT '';");
     }
-    
+    $rResult = $db->query("SHOW COLUMNS FROM `transcoding_profiles` LIKE 'use_cuvid';");
+    if (($rResult) && ($rResult->num_rows == 0)) {
+        $db->query("ALTER TABLE `transcoding_profiles` ADD COLUMN `use_cuvid` int(1) NOT NULL DEFAULT '0';");
+    }
 	// Update Categories
 	updateTMDbCategories();
 }

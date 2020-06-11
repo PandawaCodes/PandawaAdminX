@@ -835,5 +835,6 @@ $_ = Array(
 	"years" => "Years",
 	"youtube_trailer" => "YouTube Trailer",
 	"subscriptions" => "Subscriptions",
+	"use_cuvid" => "Hardware Accelerated Decoding ( CUVID )",
 );
 ?>
