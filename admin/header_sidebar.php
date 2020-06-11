@@ -245,7 +245,7 @@
 							if ($rPermissions["is_admin"]) {
 							if ((hasPermissions("adv", "add_user")) OR (hasPermissions("adv", "users")) OR (hasPermissions("adv", "mass_edit_users")) OR (hasPermissions("adv", "add_mag")) OR (hasPermissions("adv", "manage_mag")) OR (hasPermissions("adv", "add_e2")) OR (hasPermissions("adv", "manage_e2")) OR (hasPermissions("adv", "manage_events"))) { ?>
                             <li>
-                                <a href="#"> <i class="la la-tablet"></i><span><?=$_["devices"]?></span><span class="arrow-right"></span></a>
+                                <a href="#"> <i class="la la-money-bill"></i><span><?=$_["subscriptions"]?></span><span class="arrow-right"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                 <?php if (hasPermissions("adv", "add_user")) { ?>
                                     <li><a href="./user.php"><?=$_["add_user"]?></a></li>
