@@ -1682,7 +1682,7 @@ function updateTables() {
 	$rResult = $db->query("SHOW COLUMNS FROM `reg_users` LIKE 'dark_mode';");
     if (($rResult) && ($rResult->num_rows == 0)) {
         $db->query("ALTER TABLE `reg_users` ADD COLUMN `dark_mode` int(1) NOT NULL DEFAULT '0';");
-		$db->query("ALTER TABLE `reg_users` ADD COLUMN `sidebar` int(1) NOT NULL DEFAULT '0';");
+		$db->query("ALTER TABLE `reg_users` ADD COLUMN `sidebar` int(1) NOT NULL DEFAULT '1';");
     }
 	$rResult = $db->query("SHOW COLUMNS FROM `member_groups` LIKE 'minimum_trial_credits';");
     if (($rResult) && ($rResult->num_rows == 0)) {
@@ -1695,7 +1695,7 @@ function updateTables() {
     }
 	$rResult = $db->query("SHOW COLUMNS FROM `reg_users` LIKE 'expanded_sidebar';");
     if (($rResult) && ($rResult->num_rows == 0)) {
-        $db->query("ALTER TABLE `reg_users` ADD COLUMN `expanded_sidebar` int(1) NOT NULL DEFAULT '0';");
+        $db->query("ALTER TABLE `reg_users` ADD COLUMN `expanded_sidebar` int(1) NOT NULL DEFAULT '1';");
     }
     $rResult = $db->query("SELECT * FROM `admin_settings` WHERE `type` = 'auto_refresh';");
     if (($rResult) && ($rResult->num_rows == 0)) {
