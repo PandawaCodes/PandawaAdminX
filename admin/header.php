@@ -248,7 +248,7 @@
 							if ($rPermissions["is_admin"]) {
 							if ((hasPermissions("adv", "add_mag")) OR (hasPermissions("adv", "manage_mag")) OR (hasPermissions("adv", "add_e2")) OR (hasPermissions("adv", "manage_e2")) OR (hasPermissions("adv", "manage_events"))) { ?>
                             <li class="has-submenu">
-                                <a href="#"> <i class="la la-tablet"></i><?=$_["devices"]?> <div class="arrow-down"></div></a>
+                                <a href="#"> <i class="la la-money-bill"></i><?=$_["subscriptions"]?> <div class="arrow-down"></div></a>
                                 <ul class="submenu">
                                     <?php if (hasPermissions("adv", "add_user")) { ?>
                                     <li><a href="./user.php"><?=$_["add_user"]?></a></li>
