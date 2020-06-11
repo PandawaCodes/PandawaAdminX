@@ -260,15 +260,15 @@ if ($rSettings["sidebar"]) {?>
                                                                 <input type="text" class="form-control" id="crf_value" name="crf_value" value="<?php if (isset($rProfileArr)) {echo htmlspecialchars($rProfileOptions["8"]["val"]);}?>">
                                                             </div>
                                                         </div>
-                                                        <div class="form-group row mb-4">
-                                                            <div id="form_scaling">
-                                                                <label class="col-md-3 col-form-label" for="scaling"><?=$_["scaling"]?> <i data-toggle="tooltip" data-placement="top" title="" data-original-title="<?=$_["profile_tooltip_9"]?>" class="mdi mdi-information"></i></label>
-                                                                <div class="col-md-3">
-                                                                    <input type="text" class="form-control" id="scaling" name="scaling" value="<?php if (isset($rProfileArr)) {echo htmlspecialchars($rProfileOptions["9"]["val"]);}?>">
-                                                                </div>
+                                                        <div class="form-group row mb-4" id="form_scaling">
+                                                            <label class="col-md-3 col-form-label" for="scaling"><?=$_["scaling"]?> <i data-toggle="tooltip" data-placement="top" title="" data-original-title="<?=$_["profile_tooltip_9"]?>" class="mdi mdi-information"></i></label>
+                                                            <div class="col-md-9">
+                                                                <input type="text" class="form-control" id="scaling" name="scaling" value="<?php if (isset($rProfileArr)) {echo htmlspecialchars($rProfileOptions["9"]["val"]);}?>">
                                                             </div>
-                                                            <label class="col-md-3 col-form-label" for="aspect_ratio"><?=$_["aspect_ratio"]?> <i data-toggle="tooltip" data-placement="top" title="" data-original-title="<?=$_["profile_tooltip_10"]?>" class="mdi mdi-information"></i></label>
-                                                            <div class="col-md-3">
+                                                        </div>
+                                                        <div class="form-group row mb-4">
+                                                        <label class="col-md-3 col-form-label" for="aspect_ratio"><?=$_["aspect_ratio"]?> <i data-toggle="tooltip" data-placement="top" title="" data-original-title="<?=$_["profile_tooltip_10"]?>" class="mdi mdi-information"></i></label>
+                                                            <div class="col-md-9">
                                                                 <input type="text" class="form-control" id="aspect_ratio" name="aspect_ratio" value="<?php if (isset($rProfileArr)) {echo htmlspecialchars($rProfileOptions["10"]["val"]);}?>">
                                                             </div>
                                                         </div>
