@@ -836,5 +836,8 @@ $_ = Array(
 	"youtube_trailer" => "YouTube Trailer",
 	"subscriptions" => "Subscriptions",
 	"use_cuvid" => "Hardware Accelerated Decoding ( CUVID )",
+	"hw_resize" => "Hardware Resize Size ( 720x576 )",
+	"hw_deinterlancing" => "Hardware Deinterlancing Filter",
+	"sw_deinterlancing" => "Deinterlancing Filter",
 );
 ?>
