@@ -11,6 +11,9 @@ if (isset($_POST["submit_profile"])) {
     if (strlen($_POST["deinterlancing"]) > 0) {
         $rProfileOptions["-deint"] = $_POST["deinterlancing"];
     }
+    if (strlen($_POST["resize"]) > 0) {
+        $rProfileOptions["-resize"] = $_POST["resize"];
+    }
     if (strlen($_POST["video_codec"]) > 0) {
         $rProfileOptions["-vcodec"] = $_POST["video_codec"];
     }
@@ -175,7 +178,7 @@ if ($rSettings["sidebar"]) {?>
                                                             <div class="col-md-3">
                                                             <select id="hwaccel" name="hwaccel" class="form-control" data-toggle="select2">
                                                                     <?php foreach (array("" => "Do not use GPU Encoding", "cuvid -c:v h264_cuvid" => "H.264 NVENC Decoding", "cuvid -c:v hevc_cuvid" => "H.265 / HVEC NVENC Decoding") as $rCodec => $rCodecName) {?>
-                                                                    <option <?php if ((isset($rProfileArr)) && ($rProfileOptions["-hwaccell"] == $rCodec)) {echo "selected ";}?>value="<?=$rCodec?>"><?=$rCodecName?></option>
+                                                                    <option <?php if ((isset($rProfileArr)) && ($rProfileOptions["-hwaccel"] == $rCodec)) {echo "selected ";}?>value="<?=$rCodec?>"><?=$rCodecName?></option>
                                                                     <?php }?>
                                                                 </select>
                                                             </div>
