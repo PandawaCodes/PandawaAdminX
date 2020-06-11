@@ -174,7 +174,7 @@ if ($rSettings["sidebar"]) {?>
                                                             <label class="col-md-3 col-form-label" for="hwaccel"><?=$_["use_cuvid"]?></label>
                                                             <div class="col-md-3">
                                                             <select id="hwaccel" name="hwaccel" class="form-control" data-toggle="select2">
-                                                                    <?php foreach (array("" => "Do not use GPU Encoding", "cuvid -c:v h264_cuvid" => "H.264 NVENC Decoding", "cuvid -c:v h265_cuvid" => "H.265 / HVEC NVENC Decoding") as $rCodec => $rCodecName) {?>
+                                                                    <?php foreach (array("" => "Do not use GPU Encoding", "cuvid -c:v h264_cuvid" => "H.264 NVENC Decoding", "cuvid -c:v hevc_cuvid" => "H.265 / HVEC NVENC Decoding") as $rCodec => $rCodecName) {?>
                                                                     <option <?php if ((isset($rProfileArr)) && ($rProfileOptions["-hwaccell"] == $rCodec)) {echo "selected ";}?>value="<?=$rCodec?>"><?=$rCodecName?></option>
                                                                     <?php }?>
                                                                 </select>
@@ -260,10 +260,12 @@ if ($rSettings["sidebar"]) {?>
                                                                 <input type="text" class="form-control" id="crf_value" name="crf_value" value="<?php if (isset($rProfileArr)) {echo htmlspecialchars($rProfileOptions["8"]["val"]);}?>">
                                                             </div>
                                                         </div>
-                                                        <div class="form-group row mb-4" id="form_scaling">
-                                                            <label class="col-md-3 col-form-label" for="scaling"><?=$_["scaling"]?> <i data-toggle="tooltip" data-placement="top" title="" data-original-title="<?=$_["profile_tooltip_9"]?>" class="mdi mdi-information"></i></label>
-                                                            <div class="col-md-3">
-                                                                <input type="text" class="form-control" id="scaling" name="scaling" value="<?php if (isset($rProfileArr)) {echo htmlspecialchars($rProfileOptions["9"]["val"]);}?>">
+                                                        <div class="form-group row mb-4">
+                                                            <div id="form_scaling">
+                                                                <label class="col-md-3 col-form-label" for="scaling"><?=$_["scaling"]?> <i data-toggle="tooltip" data-placement="top" title="" data-original-title="<?=$_["profile_tooltip_9"]?>" class="mdi mdi-information"></i></label>
+                                                                <div class="col-md-3">
+                                                                    <input type="text" class="form-control" id="scaling" name="scaling" value="<?php if (isset($rProfileArr)) {echo htmlspecialchars($rProfileOptions["9"]["val"]);}?>">
+                                                                </div>
                                                             </div>
                                                             <label class="col-md-3 col-form-label" for="aspect_ratio"><?=$_["aspect_ratio"]?> <i data-toggle="tooltip" data-placement="top" title="" data-original-title="<?=$_["profile_tooltip_10"]?>" class="mdi mdi-information"></i></label>
                                                             <div class="col-md-3">
