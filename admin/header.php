@@ -194,7 +194,7 @@
                                 </ul>
                             </li>
                             <?php }
-							if ((hasPermissions("adv", "add_user")) OR (hasPermissions("adv", "users")) OR (hasPermissions("adv", "mass_edit_users")) OR (hasPermissions("adv", "mng_regusers")) OR (hasPermissions("adv", "add_reguser")) OR (hasPermissions("adv", "credits_log")) OR (hasPermissions("adv", "client_request_log")) OR (hasPermissions("adv", "reg_userlog"))) { ?>
+							if ((hasPermissions("adv", "add_reguser")) OR (hasPermissions("adv", "credits_log")) OR (hasPermissions("adv", "client_request_log")) OR (hasPermissions("adv", "reg_userlog"))) { ?>
 							<li class="has-submenu">
                                 <a href="#"> <i class="la la-user"></i><?=$_["users"]?> <div class="arrow-down"></div></a>
                                 <ul class="submenu">
@@ -246,7 +246,7 @@
                             </li>
                             <?php }
 							if ($rPermissions["is_admin"]) {
-							if ((hasPermissions("adv", "add_mag")) OR (hasPermissions("adv", "manage_mag")) OR (hasPermissions("adv", "add_e2")) OR (hasPermissions("adv", "manage_e2")) OR (hasPermissions("adv", "manage_events"))) { ?>
+							if ((hasPermissions("adv", "add_user")) OR (hasPermissions("adv", "users")) OR (hasPermissions("adv", "mass_edit_users")) OR (hasPermissions("adv", "mng_regusers")) OR (hasPermissions("adv", "add_mag")) OR (hasPermissions("adv", "manage_mag")) OR (hasPermissions("adv", "add_e2")) OR (hasPermissions("adv", "manage_e2")) OR (hasPermissions("adv", "manage_events"))) { ?>
                             <li class="has-submenu">
                                 <a href="#"> <i class="la la-money-bill"></i><?=$_["subscriptions"]?> <div class="arrow-down"></div></a>
                                 <ul class="submenu">

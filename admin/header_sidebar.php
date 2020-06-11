@@ -191,22 +191,11 @@
                                 </ul>
                             </li>
                             <?php }
-							if ((hasPermissions("adv", "add_user")) OR (hasPermissions("adv", "users")) OR (hasPermissions("adv", "mass_edit_users")) OR (hasPermissions("adv", "mng_regusers")) OR (hasPermissions("adv", "add_reguser")) OR (hasPermissions("adv", "credits_log")) OR (hasPermissions("adv", "client_request_log")) OR (hasPermissions("adv", "reg_userlog"))) { ?>
+							if ((hasPermissions("adv", "mng_regusers")) OR (hasPermissions("adv", "add_reguser")) OR (hasPermissions("adv", "credits_log")) OR (hasPermissions("adv", "client_request_log")) OR (hasPermissions("adv", "reg_userlog"))) { ?>
 							<li>
                                 <a href="#"> <i class="la la-user"></i><span><?=$_["users"]?></span><span class="arrow-right"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-									<?php if (hasPermissions("adv", "add_user")) { ?>
-                                    <li><a href="./user.php"><?=$_["add_user"]?></a></li>
-									<?php }
-									if (hasPermissions("adv", "users")) { ?>
-                                    <li><a href="./users.php"><?=$_["manage_users"]?></a></li>
-									<?php }
-									if (hasPermissions("adv", "mass_edit_users")) { ?>
-                                    <li><a href="./user_mass.php"><?=$_["mass_edit_users"]?></a></li>
-									<?php }
-                                    if ((hasPermissions("adv", "add_reguser")) OR (hasPermissions("adv", "mng_regusers"))) { ?>
-                                    <div class="separator"></div>
-                                    <?php }
+									<?php
 									if (hasPermissions("adv", "add_reguser")) { ?>
                                     <li><a href="./reg_user.php"><?=$_["add_registered_user"]?></a></li>
 									<?php }
@@ -254,15 +243,27 @@
                             </li>
                             <?php }
 							if ($rPermissions["is_admin"]) {
-							if ((hasPermissions("adv", "add_mag")) OR (hasPermissions("adv", "manage_mag")) OR (hasPermissions("adv", "add_e2")) OR (hasPermissions("adv", "manage_e2")) OR (hasPermissions("adv", "manage_events"))) { ?>
+							if ((hasPermissions("adv", "add_user")) OR (hasPermissions("adv", "users")) OR (hasPermissions("adv", "mass_edit_users")) OR (hasPermissions("adv", "add_mag")) OR (hasPermissions("adv", "manage_mag")) OR (hasPermissions("adv", "add_e2")) OR (hasPermissions("adv", "manage_e2")) OR (hasPermissions("adv", "manage_events"))) { ?>
                             <li>
                                 <a href="#"> <i class="la la-tablet"></i><span><?=$_["devices"]?></span><span class="arrow-right"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-									<?php if (hasPermissions("adv", "add_mag")) { ?>
+                                <?php if (hasPermissions("adv", "add_user")) { ?>
+                                    <li><a href="./user.php"><?=$_["add_user"]?></a></li>
+									<?php }
+									if (hasPermissions("adv", "users")) { ?>
+                                    <li><a href="./users.php"><?=$_["manage_users"]?></a></li>
+									<?php }
+									if (hasPermissions("adv", "mass_edit_users")) { ?>
+                                    <li><a href="./user_mass.php"><?=$_["mass_edit_users"]?></a></li>
+									<?php }
+                                    if ((hasPermissions("adv", "add_mag")) OR (hasPermissions("adv", "add_mag"))) { ?>
+                                    <div class="separator"></div>
+                                    <?php }
+						            if (hasPermissions("adv", "add_mag")) { ?>
                                     <li><a href="./user.php?mag"><?=$_["add_mag"]?></a></li>
                                     <li><a href="./mag.php"><?=$_["link_mag"]?></a></li>
 									<?php }
-									if (hasPermissions("adv", "manage_mag")) { ?>
+									if (hasPermissions("adv", "c")) { ?>
                                     <li><a href="./mags.php"><?=$_["manage_mag_devices"]?></a></li>
 									<?php }
                                     if ((hasPermissions("adv", "add_e2")) OR (hasPermissions("adv", "manage_e2")) OR (hasPermissions("adv", "manage_events"))) { ?>
