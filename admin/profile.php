@@ -433,6 +433,7 @@ if ($rSettings["sidebar"]) {?>
                     $("#form_scaling").fadeOut();
                     $("#form_cdeint").fadeOut();
                 }
+            });
         });
         </script>
     </body>
