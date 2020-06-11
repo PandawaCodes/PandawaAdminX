@@ -72,7 +72,7 @@ $_ = Array(
     "mem_usage" => "Mem Usage",
     "uptime" => "Uptime",
     "system_uptime" => "System Uptime",
-    "dashboard_no_permissions" => "Welcome to Xtream UI! You do not have permission to view the dashboard.",
+    "dashboard_no_permissions" => "Welcome to Pandawa Panel! You do not have permission to view the dashboard.",
     "dashboard_nav_top" => "Please navigate using the top menu.",
     "dashboard_nav_left" => "Please navigate using the menu on the left.",
     "profile" => "Profile",
@@ -834,5 +834,6 @@ $_ = Array(
 	"wednesday" => "Wednesday",
 	"years" => "Years",
 	"youtube_trailer" => "YouTube Trailer",
+	"subscriptions" => "Subscriptions",
 );
 ?>

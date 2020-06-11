@@ -198,18 +198,7 @@
 							<li class="has-submenu">
                                 <a href="#"> <i class="la la-user"></i><?=$_["users"]?> <div class="arrow-down"></div></a>
                                 <ul class="submenu">
-                                    <?php if (hasPermissions("adv", "add_user")) { ?>
-                                    <li><a href="./user.php"><?=$_["add_user"]?></a></li>
-									<?php }
-									if (hasPermissions("adv", "users")) { ?>
-                                    <li><a href="./users.php"><?=$_["manage_users"]?></a></li>
-									<?php }
-									if (hasPermissions("adv", "mass_edit_users")) { ?>
-                                    <li><a href="./user_mass.php"><?=$_["mass_edit_users"]?></a></li>
-									<?php }
-                                    if ((hasPermissions("adv", "add_reguser")) OR (hasPermissions("adv", "mng_regusers"))) { ?>
-                                    <div class="separator"></div>
-                                    <?php }
+                                    <?php
 									if (hasPermissions("adv", "add_reguser")) { ?>
                                     <li><a href="./reg_user.php"><?=$_["add_registered_user"]?></a></li>
 									<?php }
@@ -261,7 +250,19 @@
                             <li class="has-submenu">
                                 <a href="#"> <i class="la la-tablet"></i><?=$_["devices"]?> <div class="arrow-down"></div></a>
                                 <ul class="submenu">
-                                    <?php if (hasPermissions("adv", "add_mag")) { ?>
+                                    <?php if (hasPermissions("adv", "add_user")) { ?>
+                                    <li><a href="./user.php"><?=$_["add_user"]?></a></li>
+									<?php }
+									if (hasPermissions("adv", "users")) { ?>
+                                    <li><a href="./users.php"><?=$_["manage_users"]?></a></li>
+									<?php }
+									if (hasPermissions("adv", "mass_edit_users")) { ?>
+                                    <li><a href="./user_mass.php"><?=$_["mass_edit_users"]?></a></li> 
+                                    <?php } 
+                                    if ((hasPermissions("adv", "add_mag")) OR (hasPermissions("adv", "manage_mag"))) { ?>
+                                        <div class="separator"></div>
+                                    <?php }
+                                    if (hasPermissions("adv", "add_mag")) { ?>
                                     <li><a href="./user.php?mag"><?=$_["add_mag"]?></a></li>
                                     <li><a href="./mag.php"><?=$_["link_mag"]?></a></li>
 									<?php }
