@@ -186,7 +186,7 @@ if ($rSettings["sidebar"]) {?>
                                                         <div class="form-group row mb-4" id="form_resize">
                                                             <label class="col-md-3 col-form-label" for="resize"><?=$_["hw_resize"]?></label>
                                                             <div class="col-md-3">
-                                                                <input type="text" class="form-control" id="resize" name="resize" value="<?php if (isset($rProfileArr)) {echo htmlspecialchars($rProfileArr["-resize"]);}?>" required data-parsley-trigger="change">
+                                                                <input type="text" class="form-control" id="resize" name="resize" value="<?php if (isset($rProfileArr)) {echo htmlspecialchars($rProfileArr["-resize"]);}?>" data-parsley-trigger="change">
                                                             </div>
                                                             <label class="col-md-3 col-form-label" for="deinterlancing"><?=$_["hw_deinterlancing"]?></label>
                                                             <div class="col-md-3">
