@@ -327,7 +327,7 @@ if ($rSettings["sidebar"]) {
 											<li class="nav-item">
                                                 <a href="#xui" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2"> 
 													<i class="mdi mdi-settings mr-1"></i>
-                                                    <span class="d-none d-sm-inline">Xtream UI</span>
+                                                    <span class="d-none d-sm-inline">Pandawa X</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
@@ -408,7 +408,7 @@ if ($rSettings["sidebar"]) {
                                                         <div class="form-group row mb-4">
                                                             <label class="col-md-4 col-form-label" for="site_title">Site Title</label>
                                                             <div class="col-md-8">
-                                                                <input type="text" class="form-control" id="site_title" name="site_title" value="<?=htmlspecialchars($rAdminSettings["site_title"])?>">
+                                                                <input type="text" class="form-control" id="site_title" name="site_title" value="<?=htmlspecialchars($rAdminSettings["c"])?>">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">

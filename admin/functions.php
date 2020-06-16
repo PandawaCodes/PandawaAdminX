@@ -1704,7 +1704,7 @@ function updateTables() {
     //added
     $rResult = $db->query("SELECT * FROM `admin_settings` WHERE `type` = 'site_title';");
     if (($rResult) && ($rResult->num_rows == 0)) {
-        $db->query("INSERT INTO `admin_settings`(`type`, `value`) VALUES('site_title', 'Xtream UI');");
+        $db->query("INSERT INTO `admin_settings`(`type`, `value`) VALUES('site_title', 'Pandawa X');");
     }
     $rResult = $db->query("SELECT * FROM `admin_settings` WHERE `type` = 'site_logo';");
     if (($rResult) && ($rResult->num_rows == 0)) {

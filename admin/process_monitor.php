@@ -94,7 +94,7 @@ if ($rSettings["sidebar"]) {
                                 <form id="user_activity_search">
                                     <div class="form-group row mb-4">
                                         <div class="col-md-6">
-                                            <input type="text" class="form-control" id="live_search" value="xtreamc+" placeholder="<?=$_["search_processes"]?>...">
+                                            <input type="text" class="form-control" id="live_search" value="pandawa+" placeholder="<?=$_["search_processes"]?>...">
                                         </div>
                                         <label class="col-md-1 col-form-label text-center" for="live_filter"><?=$_["server"]?></label>
                                         <div class="col-md-3">
@@ -144,7 +144,7 @@ if ($rSettings["sidebar"]) {
                                                     <?php } else { ?>
                                                     <button disabled type="button" class="btn btn-light waves-effect waves-light btn-xs"><i class="mdi mdi-eye"></i></button>
                                                     <?php }
-                                                    if ($rProcess["user"] == "xtreamc+") { ?>
+                                                    if ($rProcess["user"] == "pandawa+") { ?>
                                                     <button data-toggle="tooltip" data-placement="top" title="" data-original-title="<?=$_["kill_process_info"]?>" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="kill(<?=$_GET["server"]?>, <?=$rProcess["pid"]?>);"><i class="mdi mdi-close"></i></button>
                                                     <?php } else { ?>
                                                     <button disabled type="button" class="btn btn-light waves-effect waves-light btn-xs"><i class="mdi mdi-close"></i></button>
