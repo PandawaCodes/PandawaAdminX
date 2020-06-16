@@ -1,4 +1,4 @@
-# PandawaPanel Based on 22F
+# PandawaX Based on Xtream UI 22F
 
 in this version http broadcast, https broadcast port is already changed you need to check the nginx conf by yourself .
 
@@ -8,5 +8,5 @@ apt-get install unzip e2fsprogs python-paramiko -y && chattr -i /home/pandawaxtr
 ```
 Next step is : 
 - Upload your certificate to your server, in this nginx config will follow letsencrypt folder
-- Restart Xtream UI
+- Restart Pandawa Xtream
 
