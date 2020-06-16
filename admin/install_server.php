@@ -38,7 +38,7 @@ if (isset($_POST["submit_server"])) {
         if ($db->query($rQuery)) {
             $rServerID = intval($db->insert_id);
             $rJSON = Array("status" => 0, "port" => intval($_POST["ssh_port"]), "http_broadcast_port" => intval($rArray["http_broadcast_port"]), "https_broadcast_port" => intval($rArray["https_broadcast_port"]), "rtmp_port" => intval($rArray["rtmp_port"]), "host" => $_POST["server_ip"], "password" => $_POST["root_password"], "time" => intval(time()), "id" => $rServerID, "type" => "install");
-            file_put_contents("/home/xtreamcodes/iptv_xtream_codes/adtools/balancer/".$rServerID.".json", json_encode($rJSON));
+            file_put_contents("/home/pandawaxtream/iptv_panel_pro/adtools/balancer/".$rServerID.".json", json_encode($rJSON));
             header("Location: ./servers.php");
         } else {
             $_STATUS = 2;

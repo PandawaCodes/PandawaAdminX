@@ -1,1 +1,1 @@
-<?php echo shell_exec("/usr/bin/python /home/xtreamcodes/iptv_xtream_codes/pytools/balancer.py"); ?>
+<?php echo shell_exec("/usr/bin/python /home/pandawaxtream/iptv_panel_pro/pytools/balancer.py"); ?>

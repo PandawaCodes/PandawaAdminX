@@ -1,1 +1,1 @@
-/home/xtreamcodes/iptv_xtream_codes/admin/*
+/home/pandawaxtream/iptv_panel_pro/admin/*

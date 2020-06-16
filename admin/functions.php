@@ -1,5 +1,5 @@
 <?php
-include_once("/home/xtreamcodes/iptv_xtream_codes/admin/HTMLPurifier.standalone.php");
+include_once("/home/pandawaxtream/iptv_panel_pro/admin/HTMLPurifier.standalone.php");
 
 $rRelease = "1.0";             // Official Beta Release Number
 $rEarlyAccess = "F";	   	// Early Access Release
@@ -54,7 +54,7 @@ function updateGeoLite2() {
     if ($rData["version"]) {
         $rFileData = file_get_contents("https://xtream-ui.com/GeoLite2/GeoLite2.mmdb");
         if (stripos($rFileData, "MaxMind.com") !== false) {
-            $rFilePath = "/home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb";
+            $rFilePath = "/home/pandawaxtream/iptv_panel_pro/GeoLite2.mmdb";
             exec("sudo chattr -i {$rFilePath}");
             unlink($rFilePath);
             file_put_contents($rFilePath, $rFileData);
@@ -113,7 +113,7 @@ ini_set('mysql.connect_timeout', $rSQLTimeout);
 ini_set('max_execution_time', $rTimeout);
 ini_set('default_socket_timeout', $rTimeout);
 
-define("MAIN_DIR", "/home/xtreamcodes/iptv_xtream_codes/");
+define("MAIN_DIR", "/home/pandawaxtream/iptv_panel_pro/");
 define("CONFIG_CRYPT_KEY", "5709650b0d7806074842c6de575025b1");
 
 require_once realpath(dirname(__FILE__))."/mobiledetect.php";
@@ -150,7 +150,7 @@ $rSettings = getSettings();
 //if ((strlen($rAdminSettings["language"]) > 0) && (file_exists("./lang/".$rAdminSettings["language"].".php"))) {
     //include "./lang/".$rAdminSettings["language"].".php";
 //} else {
-    include "/home/xtreamcodes/iptv_xtream_codes/admin/lang/en.php";
+    include "/home/pandawaxtream/iptv_panel_pro/admin/lang/en.php";
 //}
 
 $detect = new Mobile_Detect;
@@ -210,14 +210,14 @@ function sexec($rServerID, $rCommand) {
 function changePort($rServerID, $rType, $rOldPort, $rNewPort) {
 	if ($rType == 0) {
 		// HTTP
-		sexec($rServerID, "sed -i 's/listen ".intval($rOldPort).";/listen ".intval($rNewPort).";/g' /home/xtreamcodes/iptv_xtream_codes/nginx/conf/nginx.conf");
-		sexec($rServerID, "sed -i 's/:".intval($rOldPort)."/:".intval($rNewPort)."/g' /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/nginx.conf");
+		sexec($rServerID, "sed -i 's/listen ".intval($rOldPort).";/listen ".intval($rNewPort).";/g' /home/pandawaxtream/iptv_panel_pro/nginx/conf/nginx.conf");
+		sexec($rServerID, "sed -i 's/:".intval($rOldPort)."/:".intval($rNewPort)."/g' /home/pandawaxtream/iptv_panel_pro/nginx_rtmp/conf/nginx.conf");
 	} else if ($rType == 1) {
 		// SSL
-		sexec($rServerID, "sed -i 's/listen ".intval($rOldPort)." ssl;/listen ".intval($rNewPort)." ssl;/g' /home/xtreamcodes/iptv_xtream_codes/nginx/conf/nginx.conf");
+		sexec($rServerID, "sed -i 's/listen ".intval($rOldPort)." ssl;/listen ".intval($rNewPort)." ssl;/g' /home/pandawaxtream/iptv_panel_pro/nginx/conf/nginx.conf");
 	} else if ($rType == 2) {
 		// RTMP
-		sexec($rServerID, "sed -i 's/listen ".intval($rOldPort).";/listen ".intval($rNewPort).";/g' /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/nginx.conf");
+		sexec($rServerID, "sed -i 's/listen ".intval($rOldPort).";/listen ".intval($rNewPort).";/g' /home/pandawaxtream/iptv_panel_pro/nginx_rtmp/conf/nginx.conf");
 	}
 }
 
@@ -1770,9 +1770,9 @@ function forceSecurity() {
     $db->query("UPDATE `admin_settings` SET `pass_length` = 8 WHERE `pass_length` < 8;");
 }
 
-if (file_exists("/home/xtreamcodes/iptv_xtream_codes/admin/.update")) {
-    unlink("/home/xtreamcodes/iptv_xtream_codes/admin/.update");
-    if (!file_exists("/home/xtreamcodes/iptv_xtream_codes/admin/.update")) {
+if (file_exists("/home/pandawaxtream/iptv_panel_pro/admin/.update")) {
+    unlink("/home/pandawaxtream/iptv_panel_pro/admin/.update");
+    if (!file_exists("/home/pandawaxtream/iptv_panel_pro/admin/.update")) {
         updateTables();
         forceSecurity();
     }

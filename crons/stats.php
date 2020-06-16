@@ -1,5 +1,5 @@
 <?php
-include "/home/xtreamcodes/iptv_xtream_codes/admin/functions.php";
+include "/home/pandawaxtream/iptv_panel_pro/admin/functions.php";
 
 $rPID = getmypid();
 if (isset($rAdminSettings["stats_pid"])) {
