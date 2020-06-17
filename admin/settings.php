@@ -171,10 +171,14 @@ if ((isset($_POST["submit_settings"])) && (hasPermissions("adv", "settings"))) {
         $rAdminSettings["dashboard_stats_frequency"] = $_POST["dashboard_stats_frequency"];
         unset($_POST["dashboard_stats_frequency"]);
     }
-    // if (isset($_POST["site_logo"])) {
-    //     $rAdminSettings["site_logo"] = $_POST["site_logo"];
-    //     unset($_POST["site_logo"]);
-    // }
+    if (isset($_POST["site_logo"])) {
+        $rAdminSettings["site_logo"] = $_POST["site_logo"];
+        unset($_POST["site_logo"]);
+    }
+    if (isset($_POST["site_logo_back"])) {
+        $rAdminSettings["site_logo_back"] = $_POST["site_logo_back"];
+        unset($_POST["site_logo_back"]);
+    }
     if (isset($_POST["site_title"])) {
         $rAdminSettings["site_title"] = $_POST["site_title"];
         unset($_POST["site_title"]);
@@ -408,7 +412,7 @@ if ($rSettings["sidebar"]) {
                                                         <div class="form-group row mb-4">
                                                             <label class="col-md-4 col-form-label" for="site_title">Site Title</label>
                                                             <div class="col-md-8">
-                                                                <input type="text" class="form-control" id="site_title" name="site_title" value="<?=htmlspecialchars($rAdminSettings["c"])?>">
+                                                                <input type="text" class="form-control" id="site_title" name="site_title" value="<?=htmlspecialchars($rAdminSettings["site_title"])?>">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
