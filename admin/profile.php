@@ -7,12 +7,12 @@ if (isset($_POST["submit_profile"])) {
     $rProfileOptions = array();
     if (strlen($_POST["hwaccel"]) > 0) {
         $rProfileOptions["-hwaccel"] = $_POST["hwaccel"];
-    }
-    if (strlen($_POST["deinterlancing"]) > 0) {
-        $rProfileOptions["-deint"] = $_POST["deinterlancing"];
-    }
-    if (strlen($_POST["resize"]) > 0) {
-        $rProfileOptions["-resize"] = $_POST["resize"];
+        if (strlen($_POST["deinterlancing"]) > 0) {
+            $rProfileOptions["-deint"] = $_POST["deinterlancing"];
+        }
+        if (strlen($_POST["resize"]) > 0) {
+            $rProfileOptions["-resize"] = $_POST["resize"];
+        }
     }
     if (strlen($_POST["video_codec"]) > 0) {
         $rProfileOptions["-vcodec"] = $_POST["video_codec"];
