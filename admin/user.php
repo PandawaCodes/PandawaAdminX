@@ -25,6 +25,9 @@ if (isset($_POST["submit_user"])) {
     if (strlen($_POST["password"]) == 0) {
         $_POST["password"] = generateString(10);
     }
+    if (strlen($_POST["login_token"]) == 0) {
+        $_POST["login_token"] = generateString(10);
+    }
     if (!isset($_POST["edit"])) {
         $result = $db->query("SELECT `id` FROM `users` WHERE `username` = '".ESC($_POST["username"])."';");
         if (($result) && ($result->num_rows > 0)) {
@@ -115,7 +118,6 @@ if (isset($_POST["submit_user"])) {
             $rArray["member_id"] = -1;
         }
         $rArray["created_by"] = $rArray["member_id"];
-        $rArray["login_token"] = generateString(10);
         $rCols = "`".ESC(implode('`,`', array_keys($rArray)))."`";
         foreach (array_values($rArray) as $rValue) {
             isset($rValues) ? $rValues .= ',' : $rValues = '';
@@ -327,6 +329,12 @@ if ($rSettings["sidebar"]) {
                                                             <label class="col-md-4 col-form-label" for="password">Password</label>
                                                             <div class="col-md-8">
                                                                 <input type="text" class="form-control" id="password" name="password" placeholder="auto-generate if blank" value="<?php if (isset($rUser)) { echo htmlspecialchars($rUser["password"]); } ?>">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row mb-4">
+                                                            <label class="col-md-4 col-form-label" for="login_token">Login Code ( Like ZalTV Activation Code )</label>
+                                                            <div class="col-md-8">
+                                                                <input type="text" class="form-control" id="login_token" name="login_token" placeholder="auto-generate if blank" value="<?php if (isset($rUser)) { echo htmlspecialchars($rUser["login_token"]); } ?>">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
