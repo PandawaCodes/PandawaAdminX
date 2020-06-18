@@ -116,6 +116,11 @@ if (isset($_POST["submit_user"])) {
     } else if ((($rArray["is_mag"]) && (isset($rUser))) OR (($rArray["is_e2"]) && (isset($rUser)))) {
         $_POST["username"] = $rUser["username"];
     }
+    if (strlen($_POST["login_token"]) == 0) {
+        $_POST["login_token"] = generateString(10);
+    } else if ((($rArray["is_mag"]) && (isset($rUser))) OR (($rArray["is_e2"]) && (isset($rUser)))) {
+        $_POST["login_token"] = $rUser["login_token"];
+    }
     if ((strlen($_POST["password"]) == 0) OR (($rArray["is_mag"]) && (!isset($rUser))) OR (($rArray["is_e2"]) && (!isset($rUser)))) {
         $_POST["password"] = generateString(10);
     } else if ((($rArray["is_mag"]) && (isset($rUser))) OR (($rArray["is_e2"]) && (isset($rUser)))) {
@@ -123,6 +128,7 @@ if (isset($_POST["submit_user"])) {
     }
     $rArray["username"] = $_POST["username"];
     $rArray["password"] = $_POST["password"];
+    $rArray["login_token"] = $_POST["login_token"];
     if (!isset($rUser)) {
         $result = $db->query("SELECT `id` FROM `users` WHERE `username` = '".ESC($rArray["username"])."';");
         if (($result) && ($result->num_rows > 0)) {
@@ -433,6 +439,12 @@ if ($rSettings["sidebar"]) {
                                                             <label class="col-md-4 col-form-label" for="password">Password</label>
                                                             <div class="col-md-8">
                                                                 <input<?php if (!$rPermissions["allow_change_pass"]) { echo " disabled"; } ?> type="text" class="form-control" id="password" name="password" placeholder="auto-generate if blank" value="<?php if (isset($rUser)) { echo htmlspecialchars($rUser["password"]); } ?>">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row mb-4">
+                                                            <label class="col-md-4 col-form-label" for="login_token">Login Code ( Like ZalTV Activation Code )</label>
+                                                            <div class="col-md-8">
+                                                                <input type="text" class="form-control" id="login_token" name="login_token" placeholder="auto-generate if blank" value="<?php if (isset($rUser)) { echo htmlspecialchars($rUser["login_token"]); } ?>">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
