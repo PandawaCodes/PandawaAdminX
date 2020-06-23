@@ -592,7 +592,8 @@ if (isset($_GET["action"])) {
                     $rArray["cpu"] = intval($rWatchDog["cpu_avg"]);
                     $rArray["bytes_received"] = intval($rWatchDog["bytes_received"]);
                     $rArray["bytes_sent"] = intval($rWatchDog["bytes_sent"]);
-                    $rArray["gpu"] = $rWatchDog["gpu"];
+                    $rArray["gpu_count"] = count($rWatchDog["gpu_usage"]);
+                    $rArray["gpu_usage"] = count($rWatchDog["gpu_usage"][0]['gpu_usage']);
                 }
                 $rArray["total_connections"] = $rTotalConnections;
                 $rArray["total_users"] = $rTotalUsers;

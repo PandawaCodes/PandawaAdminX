@@ -244,6 +244,20 @@ if ($rSettings["sidebar"]) {
                                             </a>
                                         </div>
 									</div>
+                                    <div class="row">
+                                        <div class="col-md-6" align="center">
+                                            <a href="./process_monitor.php?server=<?=$rServer["id"]?>">
+                                                <h4 class="header-title"><?=$_["gpu_count"]?></h4>
+                                                <input id="s_<?=$rServer["id"]?>_gpu_count" data-plugin="knob" data-width="64" data-height="64" data-fgColor="<?=$rColours[$i][1]?>" data-bgColor="#e8e7f4" value="0" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15"/>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6" align="center">
+                                            <a href="./process_monitor.php?server=<?=$rServer["id"]?>&gpu">
+                                                <h4 class="header-title"><?=$_["gpu_usage"]?></h4>
+                                                <input id="s_<?=$rServer["id"]?>_gpu_usage" data-plugin="knob" data-width="64" data-height="64" data-fgColor="<?=$rColours[$i][1]?>" data-bgColor="#e8e7f4" value="0" data-skin="tron" data-angleOffset="180" data-readOnly=true data-thickness=".15"/>
+                                            </a>
+                                        </div>
+									</div>
 								</div>
 							</div>
 							<?php } ?>
@@ -647,6 +661,7 @@ if ($rSettings["sidebar"]) {
                 $(".mem-usage .progress-bar").prop("aria-valuenow", data.mem);
                 $(".mem-usage .progress-bar").css("width", data.mem.toString() + "%");
                 $(".mem-usage .sr-only").html(data.mem.toString() + "%");
+                
                 // Uptime
 				if (data.uptime) {
 					$(".uptime .entry").html(data.uptime.split(" ").slice(0,2).join(" "));
@@ -660,6 +675,8 @@ if ($rSettings["sidebar"]) {
 					$("#s_" + data.servers[i].server_id + "_output").html($.number(Math.ceil(data.servers[i].bytes_sent), 0) + " Mbps");
 					$("#s_" + data.servers[i].server_id + "_cpu").val(data.servers[i].cpu).trigger('change');
 					$("#s_" + data.servers[i].server_id + "_mem").val(data.servers[i].mem).trigger('change');
+                    $("#s_" + data.servers[i].server_id + "_gpu_count").val(data.servers[i].cpu).trigger('change');
+					$("#s_" + data.servers[i].server_id + "_gpu_usage").val(data.servers[i].mem).trigger('change');
 					if (data.servers[i].uptime) {
 						$("#s_" + data.servers[i].server_id + "_uptime").html(data.servers[i].uptime.split(" ").slice(0,2).join(" "));
 					}
