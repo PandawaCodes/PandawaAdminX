@@ -839,5 +839,7 @@ $_ = Array(
 	"hw_resize" => "Hardware Resize Size ( 720x576 )",
 	"hw_deinterlancing" => "Hardware Deinterlancing Filter",
 	"sw_deinterlancing" => "Deinterlancing Filter",
+	"gpu_count" => "Total GPU Device",
+	"gpu_usage" => "Total GPU Process",
 );
 ?>

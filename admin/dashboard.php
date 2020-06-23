@@ -675,8 +675,8 @@ if ($rSettings["sidebar"]) {
 					$("#s_" + data.servers[i].server_id + "_output").html($.number(Math.ceil(data.servers[i].bytes_sent), 0) + " Mbps");
 					$("#s_" + data.servers[i].server_id + "_cpu").val(data.servers[i].cpu).trigger('change');
 					$("#s_" + data.servers[i].server_id + "_mem").val(data.servers[i].mem).trigger('change');
-                    $("#s_" + data.servers[i].server_id + "_gpu_count").val(data.servers[i].cpu).trigger('change');
-					$("#s_" + data.servers[i].server_id + "_gpu_usage").val(data.servers[i].mem).trigger('change');
+                    $("#s_" + data.servers[i].server_id + "_gpu_count").val(data.servers[i].gpu_count).trigger('change');
+					$("#s_" + data.servers[i].server_id + "_gpu_usage").val(data.servers[i].gpu_usage).trigger('change');
 					if (data.servers[i].uptime) {
 						$("#s_" + data.servers[i].server_id + "_uptime").html(data.servers[i].uptime.split(" ").slice(0,2).join(" "));
 					}
