@@ -270,8 +270,8 @@ if ($rSettings["sidebar"]) {
                             </div>
                             <?php }
 							$rContext = stream_context_create(array('http'=> array('timeout' => 3)));
-							$rCurrent = json_decode(file_get_contents("https://xtream-ui.com/current.json", false, $rContext), True);
-                            $rGeoLite2 = json_decode(file_get_contents("https://xtream-ui.com/GeoLite2/status.json", false, $rContext), True);
+							$rCurrent = json_decode(file_get_contents("https://api.p-codes.com/current.json", false, $rContext), True);
+                            $rGeoLite2 = json_decode(file_get_contents("https://api.p-codes.com/GeoLite2/status.json", false, $rContext), True);
                             if (intval($rGeoLite2["version"]) > $rAdminSettings["geolite2_version"]) {
 							?>
                             <div class="alert alert-info alert-dismissible fade show" role="alert">

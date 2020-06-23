@@ -1,8 +1,8 @@
 <?php
 include_once("/home/pandawaxtream/iptv_panel_pro/admin/HTMLPurifier.standalone.php");
 
-$rRelease = "1.0";             // Official Beta Release Number
-$rEarlyAccess = "F";	   	// Early Access Release
+$rRelease = "1.0.0";             // Official Beta Release Number
+$rEarlyAccess = "Alpha";	   	// Early Access Release
 $rTimeout = 60;             // Seconds Timeout for Functions & Requests
 $rSQLTimeout = 5;           // Max execution time for MySQL queries.
 $rDebug = False;
@@ -49,10 +49,10 @@ function sortArrayByArray(array $rArray, array $rSort) {
 
 function updateGeoLite2() {
     global $rAdminSettings;
-    $rURL = "https://xtream-ui.com/GeoLite2/status.json";
+    $rURL = "https://api.p-codes.com/GeoLite2/status.json";
     $rData = json_decode(file_get_contents($rURL), True);
     if ($rData["version"]) {
-        $rFileData = file_get_contents("https://xtream-ui.com/GeoLite2/GeoLite2.mmdb");
+        $rFileData = file_get_contents("https://api.p-codes.com/GeoLite2/GeoLite2.mmdb");
         if (stripos($rFileData, "MaxMind.com") !== false) {
             $rFilePath = "/home/pandawaxtream/iptv_panel_pro/GeoLite2.mmdb";
             exec("sudo chattr -i {$rFilePath}");
