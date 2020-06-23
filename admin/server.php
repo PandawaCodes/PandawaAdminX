@@ -217,6 +217,12 @@ if ($rSettings["sidebar"]) {
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
+                                                            <label class="col-md-4 col-form-label" for="vpn_ip">Internal Broadcast Domain</label>
+                                                            <div class="col-md-8">
+                                                                <input type="text" class="form-control" id="internal_broadcast_domain" name="internal_broadcast_domain" value="<?php if (isset($rServerArr)) { echo htmlspecialchars($rServerArr["internal_broadcast_domain"]); } ?>">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row mb-4">
                                                             <label class="col-md-4 col-form-label" for="total_clients">Max Clients</label>
                                                             <div class="col-md-2">
                                                                 <input type="text" class="form-control" id="total_clients" name="total_clients" value="<?php if (isset($rServerArr)) { echo htmlspecialchars($rServerArr["total_clients"]); } else { echo "1000"; } ?>" required data-parsley-trigger="change">
