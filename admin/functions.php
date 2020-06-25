@@ -1724,7 +1724,7 @@ function updateTables() {
     }
     $rResult = $db->query("SHOW COLUMNS FROM `streaming_servers` LIKE 'internal_broadcast_domain';");
     if (($rResult) && ($rResult->num_rows == 0)) {
-        $db->query("ALTER TABLE `streaming_servers` ADD COLUMN `internal_broadcast_domain` VARCHAR(2083) NOT NULL DEFAULT '';");
+        $db->query("ALTER TABLE `streaming_servers` ADD COLUMN `internal_broadcast_domain` VARCHAR(300) NOT NULL DEFAULT '';");
     }
 	// Update Categories
 	updateTMDbCategories();
