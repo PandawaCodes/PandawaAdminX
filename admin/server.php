@@ -303,6 +303,30 @@ if ($rSettings["sidebar"]) {
                                                                 </select>
                                                             </div>
                                                         </div>
+                                                        <div class="form-group row mb-4">
+                                                            <label class="col-md-4 col-form-label" for="enable_geoip">ISP Load Balancing</label>
+                                                            <div class="col-md-2">
+                                                                <input name="enable_isp" id="enable_isp" type="checkbox" <?php if (isset($rServerArr)) { if ($rServerArr["enable_isp"] == 1) { echo "checked "; } } ?>data-plugin="switchery" class="js-switch" data-color="#039cfd"/>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <select name="isp_type" id="isp_type" class="form-control select2" data-toggle="select2">
+                                                                    <?php foreach (Array("high_priority" => "High Priority", "low_priority" => "Low Priority", "strict" => "Strict") as $rType => $rText) { ?>
+                                                                    <option <?php if (isset($rServerArr)) { if ($rServerArr["isp_type"] == $rType) { echo "selected "; } } ?>value="<?=$rType?>"><?=$rText?></option>
+                                                                    <?php } ?>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row mb-4">
+                                                            <label class="col-md-4 col-form-label" for="isp_names">ISP Names</label>
+                                                            <div class="col-md-8">
+                                                                <select name="isp_names[]" id="isp_names" class="form-control select2-multiple" data-toggle="select2" multiple="multiple" data-placeholder="Choose...">
+                                                                    <?php $rSelected = json_decode($rServerArr["isp_names"], True);
+                                                                    foreach ($rIspList as $rIsp) { ?>
+                                                                    <option <?php if (isset($rServerArr)) { if (in_array($rIsp["id"], $rSelected)) { echo "selected "; } } ?>value="<?=$rIsp["id"]?>"><?=$rIsp["name"]?></option>
+                                                                    <?php } ?>
+                                                                </select>
+                                                            </div>
+                                                        </div>
                                                     </div> <!-- end col -->
                                                 </div> <!-- end row -->
                                                 <ul class="list-inline wizard mb-0">
