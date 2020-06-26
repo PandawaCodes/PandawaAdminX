@@ -920,7 +920,7 @@ if (isset($_GET["action"])) {
     } else if($_GET["action"] == "isp_list") {
         $page = $_GET['page'];
         $term = !empty($_GET['search']) ? $_GET['search'] : "";
-        echo json_encode(Array("result" => getIspList($term, $page)));exit;
+        echo json_encode(getIspList($term, $page));exit;
     }
 }
 echo json_encode(Array("result" => False));

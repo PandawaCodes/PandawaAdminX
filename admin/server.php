@@ -330,6 +330,14 @@ foreach ($rCountries as $rCountry) {?>
                                                             <label class="col-md-4 col-form-label" for="isp_names">ISP Names</label>
                                                             <div class="col-md-8">
                                                                 <select name="isp_names[]" id="isp_names" class="form-control select2-multiple" data-toggle="select2" multiple="multiple" data-placeholder="Choose...">
+                                                                <?php $rSelected = json_decode($rServerArr["isp_names"], true);
+                                                                foreach ($rSelected as $rIsp) {
+                                                                    if (isset($rServerArr)) {
+                                                                        $isp = getIspList($rSelected, 1);
+                                                                        if ($isp) {
+                                                                            ?>
+                                                                    <option selected value="<?=$isp["result"][0]["id"]?>"><?=$isp["result"][0]["name"]?></option>
+                                                                            <?php }}}?>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -403,7 +411,7 @@ foreach ($rCountries as $rCountry) {?>
             $('select').select2({width: '100%', minimumInputLength: 3})
             $('#isp_names').select2({
                 width: '100%',
-                minimumInputLength: 3,
+                // minimumInputLength: 3,
                 ajax: {
                     url: './api.php',
                     data: function (params) {
@@ -417,8 +425,9 @@ foreach ($rCountries as $rCountry) {?>
                     return query;
                     },
                     processResults: function (data) {
+                        var result = JSON.parse(data);
                         return {
-                            results: $.map(data.result, function (item) {
+                            results: $.map(result.result, function (item) {
                                 return {
                                     text: item.name,
                                     id: item.id

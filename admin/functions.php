@@ -1950,12 +1950,19 @@ function getIspList($term, $page)
         $jsonIsp = unserialize(file_get_contents($ispFilePath));
     }
     $rIspList = array(array("id" => "ALL", "name" => "All ISPs"));
-    $rIspList = array_merge($rIspList, $json);
+    $rIspList = array_merge($rIspList, $jsonIsp);
     if (!empty($term)) {
-        return array_splice(array_filter($rIspList, function ($value) use ($term) {
+        $totalFound = array_filter($rIspList, function ($value) use ($term) {
             return strpos(strtolower($value['name']), strtolower($term)) !== false;
-        }), 10 * ($page - 1), 10);
+        });
+        $totalPage = ceil((count($totalFound) / 10));
+        $isMoreData = $page < $totalPage;
+        $filtered = array_splice($totalFound, 10 * ($page - 1), 10);
+        return array("result" => $filtered, "pagination" => array("more" => $isMoreData));
     } else {
-        return array_splice($rIspList, 10 * ($page - 1), 10);
+        $totalPage = ceil((count($rIspList) / 10));
+        $filtered = array_splice($rIspList, 10 * ($page - 1), 10);
+        $isMoreData = $page < $totalPage;
+        return array("result" => $filtered, "pagination" => array("more" => $isMoreData));
     }
 }
