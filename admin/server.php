@@ -424,7 +424,7 @@ foreach ($rCountries as $rCountry) {?>
         }(jQuery));
 
         $(document).ready(function() {
-            $('select').select2({width: '100%', minimumInputLength: 3})
+            $('select').select2({width: '100%'})
             $('#isp_names').select2({
                 width: '100%',
                 // minimumInputLength: 3,
