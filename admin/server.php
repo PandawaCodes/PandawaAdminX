@@ -336,7 +336,7 @@ foreach ($rCountries as $rCountry) {?>
                                                                         $isp = getIspList($rSelected, 1);
                                                                         if ($isp) {
                                                                             ?>
-                                                                    <option selected value="<?=$isp["result"][0]["id"]?>"><?=$isp["result"][0]["name"]?></option>
+                                                                    <option selected value="<?=$rIsp?>"><?=$rIsp?></option>
                                                                             <?php }}}?>
                                                                 </select>
                                                             </div>
@@ -424,17 +424,7 @@ foreach ($rCountries as $rCountry) {?>
                     // Query parameters will be ?search=[term]&page=[page]
                     return query;
                     },
-                    processResults: function (data) {
-                        var result = JSON.parse(data);
-                        return {
-                            results: $.map(result.result, function (item) {
-                                return {
-                                    text: item.name,
-                                    id: item.id
-                                }
-                            })
-                        };
-                    },
+                    cache: true,
                 },
             })
             var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));

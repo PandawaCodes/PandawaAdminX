@@ -1945,7 +1945,7 @@ function getIspList($term, $page)
     $ispFilePath = '/home/pandawaxtream/iptv_panel_pro/adtools/isp.php';
     if (!file_exists($ispFilePath)) {
         $jsonIsp = json_decode(file_get_contents('https://api.p-codes.com/isp/isp.json'), true);
-        file_put_contents($ispFilePath, serialize($json), LOCK_EX);
+        file_put_contents($ispFilePath, serialize($jsonIsp), LOCK_EX);
     } else {
         $jsonIsp = unserialize(file_get_contents($ispFilePath));
     }
@@ -1958,11 +1958,11 @@ function getIspList($term, $page)
         $totalPage = ceil((count($totalFound) / 10));
         $isMoreData = $page < $totalPage;
         $filtered = array_splice($totalFound, 10 * ($page - 1), 10);
-        return array("result" => $filtered, "pagination" => array("more" => $isMoreData), "total_count" => count($totalFound));
+        return array("results" => $filtered, "pagination" => array("more" => $isMoreData), "total_count" => count($totalFound));
     } else {
         $totalPage = ceil((count($rIspList) / 10));
         $filtered = array_splice($rIspList, 10 * ($page - 1), 10);
         $isMoreData = $page < $totalPage;
-        return array("result" => $filtered, "pagination" => array("more" => $isMoreData), "total_count" => count($rIspList));
+        return array("results" => $filtered, "pagination" => array("more" => $isMoreData), "total_count" => count($rIspList));
     }
 }
