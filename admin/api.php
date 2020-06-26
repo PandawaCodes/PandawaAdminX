@@ -699,7 +699,7 @@ if (isset($_GET["action"])) {
         echo json_encode($return);exit;
     } else if ($_GET["action"] == "force_epg") {
         if ((!$rPermissions["is_admin"]) OR (!hasPermissions("adv", "epg"))) { echo json_encode(Array("result" => False)); exit; }
-        sexec($_INFO["server_id"], "/home/pandawaxtream/iptv_panel_pro/php/bin/php /home/pandawaxtream/iptv_panel_pro/crons/epg.php");
+        sexec($_INFO["server_id"], "/home/pandawaxtream/iptv_panel_pro/php/bin/php /home/pandawaxtream/iptv_panel_pro/cronjobs/cron.sync_epg.php");
         echo json_encode(Array("result" => True));exit;
     } else if ($_GET["action"] == "tmdb_search") {
         if ((!$rPermissions["is_admin"]) OR ((!hasPermissions("adv", "add_series")) && (!hasPermissions("adv", "edit_series")) && (!hasPermissions("adv", "add_movie")) && (!hasPermissions("adv", "edit_movie")) && (!hasPermissions("adv", "add_episode")) && (!hasPermissions("adv", "edit_episode")))) { echo json_encode(Array("result" => False)); exit; }
@@ -917,6 +917,10 @@ if (isset($_GET["action"])) {
             }
         }
         echo json_encode(Array("result" => False));exit;
+    } else if($_GET["action"] == "isp_list") {
+        $page = $_GET['page'];
+        $term = !empty($_GET['search']) ? $_GET['search'] : "";
+        echo json_encode(Array("result" => getIspList($term, $page)));exit;
     }
 }
 echo json_encode(Array("result" => False));
