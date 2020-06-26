@@ -67,6 +67,22 @@ if (isset($_POST["submit_server"])) {
     } else {
         $rArray["geoip_countries"] = array();
     }
+    if (isset($_POST["enable_isp"])) {
+        $rArray["enable_isp"] = true;
+        unset($_POST["enable_isp"]);
+    } else {
+        $rArray["enable_isp"] = false;
+    }
+
+    if (isset($_POST["isp_names"])) {
+        $rArray["isp_names"] = array();
+        foreach ($_POST["isp_names"] as $rIsp) {
+            $rArray["isp_names"][] = $rIsp;
+        }
+        unset($_POST["isp_names"]);
+    } else {
+        $rArray["isp_names"] = array();
+    }
     if (!isset($_STATUS)) {
         foreach ($_POST as $rKey => $rValue) {
             if (isset($rArray[$rKey])) {

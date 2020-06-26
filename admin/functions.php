@@ -1949,11 +1949,11 @@ function getIspList($term, $page)
     } else {
         $jsonIsp = unserialize(file_get_contents($ispFilePath));
     }
-    $rIspList = array(array("id" => "ALL", "name" => "All ISPs"));
+    $rIspList = array(array("id" => "ALL", "text" => "All ISPs"));
     $rIspList = array_merge($rIspList, $jsonIsp);
     if (!empty($term)) {
         $totalFound = array_filter($rIspList, function ($value) use ($term) {
-            return strpos(strtolower($value['name']), strtolower($term)) !== false;
+            return strpos(strtolower($value['text']), strtolower($term)) !== false;
         });
         $totalPage = ceil((count($totalFound) / 10));
         $isMoreData = $page < $totalPage;
