@@ -47,6 +47,10 @@ function sortArrayByArray(array $rArray, array $rSort) {
     return $rOrdered + $rArray;
 }
 
+function array_except($array, $keys) {
+    return array_diff_key($array, array_flip((array) $keys));   
+} 
+
 function updateGeoLite2() {
     global $rAdminSettings;
     $rURL = "https://api.p-codes.com/GeoLite2/status.json";
