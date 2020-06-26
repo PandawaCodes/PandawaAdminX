@@ -116,6 +116,11 @@ if ($rSettings["sidebar"]) {
                                                         <div class="form-group row mb-4">
                                                             <label class="col-md-4 col-form-label" for="isp">ISP Name</label>
                                                             <div class="col-md-8">
+                                                                <select name="isp" id="isp" class="form-control select2" data-toggle="select2">
+                                                                    <?php foreach (array("high_priority" => "High Priority", "low_priority" => "Low Priority", "strict" => "Strict") as $rType => $rText) {?>
+                                                                    <option <?php if (isset($rServerArr)) {if ($rServerArr["isp_type"] == $rType) {echo "selected ";}}?>value="<?=$rType?>"><?=$rText?></option>
+                                                                <?php }?>
+                                                                </select>
                                                                 <input type="text" class="form-control" id="isp" name="isp" value="<?php if (isset($rISPArr)) { echo htmlspecialchars($rISPArr["isp"]); } ?>" required data-parsley-trigger="change">
                                                             </div>
                                                         </div>

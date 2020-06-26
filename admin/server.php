@@ -349,7 +349,7 @@ foreach ($rCountries as $rCountry) {?>
                                                                 <?php $rSelected = json_decode($rServerArr["isp_names"], true);
                                                                 foreach ($rSelected as $rIsp) {
                                                                     if (isset($rServerArr)) {
-                                                                        $isp = getIspList($rSelected, 1);
+                                                                        $isp = getIspList($rIsp, 1);
                                                                         if ($isp) {
                                                                             ?>
                                                                     <option selected value="<?=$rIsp?>"><?=$rIsp?></option>
