@@ -117,11 +117,14 @@ if ($rSettings["sidebar"]) {
                                                             <label class="col-md-4 col-form-label" for="isp">ISP Name</label>
                                                             <div class="col-md-8">
                                                                 <select name="isp" id="isp" class="form-control select2" data-toggle="select2">
-                                                                    <?php foreach (array("high_priority" => "High Priority", "low_priority" => "Low Priority", "strict" => "Strict") as $rType => $rText) {?>
-                                                                    <option <?php if (isset($rServerArr)) {if ($rServerArr["isp_type"] == $rType) {echo "selected ";}}?>value="<?=$rType?>"><?=$rText?></option>
-                                                                <?php }?>
+                                                                    <?php if (isset($rISPArr)) {
+                                                                        $isp = getIspList($rISPArr["isp"], 1);
+                                                                        if ($isp) {
+                                                                            ?>
+                                                                    <option selected value="<?=$rISPArr["isp"];?>"><?=$rISPArr["isp"]?></option>
+                                                                            <?php } }
+                                                                            ?>
                                                                 </select>
-                                                                <input type="text" class="form-control" id="isp" name="isp" value="<?php if (isset($rISPArr)) { echo htmlspecialchars($rISPArr["isp"]); } ?>" required data-parsley-trigger="change">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
@@ -188,6 +191,24 @@ if ($rSettings["sidebar"]) {
         
         <script>
         $(document).ready(function() {
+            $('#isp').select2({
+                width: '100%',
+                // minimumInputLength: 3,
+                ajax: {
+                    url: './api.php',
+                    data: function (params) {
+                    var query = {
+                        action: "isp_list",
+                        search: params.term,
+                        page: params.page || 1
+                    }
+
+                    // Query parameters will be ?search=[term]&page=[page]
+                    return query;
+                    },
+                    cache: true,
+                },
+            })
             var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
             elems.forEach(function(html) {
               var switchery = new Switchery(html);
