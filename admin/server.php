@@ -133,9 +133,8 @@ if(!file_exists($ispFilePath)) {
     $json = file_get_contents($ispFilePath);
 }
 $rIspList = array(array("id" => "ALL", "name" => "All ISPs"));
-$ispJson = array_except(json_decode($json, true),['range_start'], ['range_end']);
-$unique = array_unique(array_map(function($isp) { return $isp['id']; }, $ispJson));
-$rIspList = array_merge($unique);
+$ispJson = json_decode($json, true);
+$rIspList = array_merge($ispJson);
 
 if ($rSettings["sidebar"]) {
     include "header_sidebar.php";
