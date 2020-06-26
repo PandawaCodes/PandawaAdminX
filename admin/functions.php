@@ -1958,11 +1958,11 @@ function getIspList($term, $page)
         $totalPage = ceil((count($totalFound) / 10));
         $isMoreData = $page < $totalPage;
         $filtered = array_splice($totalFound, 10 * ($page - 1), 10);
-        return array("result" => $filtered, "pagination" => array("more" => $isMoreData));
+        return array("result" => $filtered, "pagination" => array("more" => $isMoreData), "total_count" => count($totalFound));
     } else {
         $totalPage = ceil((count($rIspList) / 10));
         $filtered = array_splice($rIspList, 10 * ($page - 1), 10);
         $isMoreData = $page < $totalPage;
-        return array("result" => $filtered, "pagination" => array("more" => $isMoreData));
+        return array("result" => $filtered, "pagination" => array("more" => $isMoreData), "total_count" => count($rIspList));
     }
 }
