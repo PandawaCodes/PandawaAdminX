@@ -1948,7 +1948,7 @@ if ($rType == "users") {
         $rResult = $db->query($rQuery);
         if (($rResult) && ($rResult->num_rows > 0)) {
             while ($rRow = $rResult->fetch_assoc()) {
-                $rReturn["data"][] = Array($rRow["id"], $rRow["stream_display_name"], $rRow["category_name"], $rRow["active_count"], "<button type='button' class='btn waves-effect waves-light btn-xs' href='javascript:void(0);' onClick='selectFingerprint(".$rRow["id"].")'><i class='mdi mdi-fingerprint'></i></button>");
+                $rReturn["data"][] = Array($rRow["id"], $rRow["stream_display_name"], $rRow["category_name"], $rRow["active_count"], "<button type='button' class='btn btn-outline-primary waves-effect waves-light btn-xs' href='javascript:void(0);' onClick='selectFingerprint(".$rRow["id"].")'><i class='mdi mdi-fingerprint'></i></button>");
             }
         }
     }
