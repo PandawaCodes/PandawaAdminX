@@ -819,7 +819,7 @@ if (isset($_GET["action"])) {
         set_time_limit(300);
         ini_set('max_execution_time', 300);
         ini_set('default_socket_timeout', 300);
-        header('application/json');
+        header('Content-Type: application/json');
         echo shell_exec("/home/pandawaxtream/iptv_panel_pro/bin/ffprobe -v quiet -probesize 2000000 -print_format json -show_format -show_streams \"".escapeshellcmd($_GET["stream"])."\"");exit;
     } else if ($_GET["action"] == "clear_logs") {
         if ((!$rPermissions["is_admin"]) OR ((!hasPermissions("adv", "reg_userlog")) && (!hasPermissions("adv", "client_request_log")) && (!hasPermissions("adv", "connection_logs")) && (!hasPermissions("adv", "stream_errors")) && (!hasPermissions("adv", "credits_log")) && (!hasPermissions("adv", "folder_watch_settings")))) { echo json_encode(Array("result" => False)); exit; }
