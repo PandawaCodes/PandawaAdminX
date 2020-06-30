@@ -674,11 +674,11 @@ if ($rSettings["sidebar"]) {
                                                         <div class="form-group row mb-4">
                                                             <label class="col-md-4 col-form-label" for="enable_adaptive">Enable Adaptive Streaming <i data-toggle="tooltip" data-placement="top" title="" data-original-title="Allow FFmpeg to generate adaptive streaming it's will override transcoding options." class="mdi mdi-information"></i></label>
                                                             <div class="col-md-2">
-                                                                <input name="enable_adaptive" id="enable_adaptive" type="checkbox" <?php if (isset($rStream)) { if ($rStream["enable_adaptive"] == 1) { echo "checked "; } } else { echo "checked "; } ?>data-plugin="switchery" class="js-switch" data-color="#039cfd"/>
+                                                                <input name="enable_adaptive" id="enable_adaptive" type="checkbox" <?php if (isset($rStream)) { if ($rStream["enable_adaptive"] == 1) { echo "checked "; } } ?>data-plugin="switchery" class="js-switch" data-color="#039cfd"/>
                                                             </div>
                                                             <label class="col-md-4 col-form-label" for="use_adaptive_gpu">Use GPU For Adaptive <i data-toggle="tooltip" data-placement="top" title="" data-original-title="Use GPU Acceleration for Adaptive Streaming." class="mdi mdi-information"></i></label>
                                                             <div class="col-md-2">
-                                                                <input name="use_adaptive_gpu" id="use_adaptive_gpu" type="checkbox" <?php if (isset($rStream)) { if ($rStream["use_adaptive_gpu"] == 1) { echo "checked "; } } else { echo "checked "; } ?>data-plugin="switchery" class="js-switch" data-color="#039cfd"/>
+                                                                <input name="use_adaptive_gpu" id="use_adaptive_gpu" type="checkbox" <?php if (isset($rStream)) { if ($rStream["use_adaptive_gpu"] == 1) { echo "checked "; } } ?>data-plugin="switchery" class="js-switch" data-color="#039cfd"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
