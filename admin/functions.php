@@ -1849,6 +1849,10 @@ function updateTables()
     if (($rResult) && ($rResult->num_rows == 0)) {
         $db->query("ALTER TABLE `streaming_servers` ADD COLUMN `internal_broadcast_domain` VARCHAR(300) NOT NULL DEFAULT '';");
     }
+    $rResult = $db->query("SHOW COLUMNS FROM `streams` LIKE 'enable_adaptive';");
+    if (($rResult) && ($rResult->num_rows == 0)) {
+        $db->query("ALTER TABLE `streams`ADD COLUMN `enable_adaptive` INT(1) NOT NULL DEFAULT 0;");
+    }
     // Update Categories
     updateTMDbCategories();
 }

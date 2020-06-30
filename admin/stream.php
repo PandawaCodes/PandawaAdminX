@@ -1139,7 +1139,7 @@ if ($rSettings["sidebar"]) {
                                 $("#datatable-map").DataTable().row.add([array.index, "Video", rString]);
                             } else if (array.codec_type == "audio") {
                                 rString = array.codec_name.toUpperCase();
-                                if (array.tags.language) {
+                                if (array.tags !== undefined && array.tags.language !== undefined) {
                                     rString += " - " + array.tags.language.toUpperCase();
                                 }
                                 if ((array.sample_rate) && (array.sample_rate > 0)) {
