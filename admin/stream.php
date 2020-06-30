@@ -14,7 +14,7 @@ if (isset($_POST["submit_stream"])) {
         unset($rArray["id"]);
     } else {
 		if (!hasPermissions("adv", "add_stream")) { exit; }
-        $rArray = Array("type" => 1, "added" => time(),"enable_adaptive" => 0, "read_native" => 0, "stream_all" => 0, "redirect_stream" => 1, "direct_source" => 0, "gen_timestamps" => 1, "transcode_attributes" => Array(), "stream_display_name" => "", "stream_source" => Array(), "category_id" => 0, "stream_icon" => "", "notes" => "", "custom_sid" => "", "custom_ffmpeg" => "", "custom_map" => "", "transcode_profile_id" => 0, "enable_transcode" => 0, "auto_restart" => "[]", "allow_record" => 1, "rtmp_output" => 0, "epg_id" => null, "channel_id" => null, "epg_lang" => null, "tv_archive_server_id" => 0, "tv_archive_duration" => 0, "delay_minutes" => 0, "external_push" => Array(), "probesize_ondemand" => 128000);
+        $rArray = Array("type" => 1, "added" => time(), "enable_adaptive" => 0, "use_adaptive_gpu" => 0, "read_native" => 0, "stream_all" => 0, "redirect_stream" => 1, "direct_source" => 0, "gen_timestamps" => 1, "transcode_attributes" => Array(), "stream_display_name" => "", "stream_source" => Array(), "category_id" => 0, "stream_icon" => "", "notes" => "", "custom_sid" => "", "custom_ffmpeg" => "", "custom_map" => "", "transcode_profile_id" => 0, "enable_transcode" => 0, "auto_restart" => "[]", "allow_record" => 1, "rtmp_output" => 0, "epg_id" => null, "channel_id" => null, "epg_lang" => null, "tv_archive_server_id" => 0, "tv_archive_duration" => 0, "delay_minutes" => 0, "external_push" => Array(), "probesize_ondemand" => 128000);
     }
     if ((isset($_POST["days_to_restart"])) && (preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/", $_POST["time_to_restart"]))) {
         $rTimeArray = Array("days" => Array(), "at" => $_POST["time_to_restart"]);
@@ -81,6 +81,12 @@ if (isset($_POST["submit_stream"])) {
         unset($_POST["enable_adaptive"]);
     } else {
         $rArray["enable_adaptive"] = 0;
+    }
+    if (isset($_POST["use_adaptive_gpu"])) {
+        $rArray["use_adaptive_gpu"] = 1;
+        unset($_POST["use_adaptive_gpu"]);
+    } else {
+        $rArray["use_adaptive_gpu"] = 0;
     }
     if (isset($_POST["tv_archive_duration"])) {
         $rArray["tv_archive_duration"] = intval($_POST["tv_archive_duration"]);
@@ -669,6 +675,10 @@ if ($rSettings["sidebar"]) {
                                                             <label class="col-md-4 col-form-label" for="enable_adaptive">Enable Adaptive Streaming <i data-toggle="tooltip" data-placement="top" title="" data-original-title="Allow FFmpeg to generate adaptive streaming it's will override transcoding options." class="mdi mdi-information"></i></label>
                                                             <div class="col-md-2">
                                                                 <input name="enable_adaptive" id="enable_adaptive" type="checkbox" <?php if (isset($rStream)) { if ($rStream["enable_adaptive"] == 1) { echo "checked "; } } else { echo "checked "; } ?>data-plugin="switchery" class="js-switch" data-color="#039cfd"/>
+                                                            </div>
+                                                            <label class="col-md-4 col-form-label" for="use_adaptive_gpu">Use GPU For Adaptive <i data-toggle="tooltip" data-placement="top" title="" data-original-title="Use GPU Acceleration for Adaptive Streaming." class="mdi mdi-information"></i></label>
+                                                            <div class="col-md-2">
+                                                                <input name="use_adaptive_gpu" id="use_adaptive_gpu" type="checkbox" <?php if (isset($rStream)) { if ($rStream["use_adaptive_gpu"] == 1) { echo "checked "; } } else { echo "checked "; } ?>data-plugin="switchery" class="js-switch" data-color="#039cfd"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
