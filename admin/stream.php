@@ -14,7 +14,7 @@ if (isset($_POST["submit_stream"])) {
         unset($rArray["id"]);
     } else {
 		if (!hasPermissions("adv", "add_stream")) { exit; }
-        $rArray = Array("type" => 1, "added" => time(), "read_native" => 0, "stream_all" => 0, "redirect_stream" => 1, "direct_source" => 0, "gen_timestamps" => 1, "transcode_attributes" => Array(), "stream_display_name" => "", "stream_source" => Array(), "category_id" => 0, "stream_icon" => "", "notes" => "", "custom_sid" => "", "custom_ffmpeg" => "", "custom_map" => "", "transcode_profile_id" => 0, "enable_transcode" => 0, "auto_restart" => "[]", "allow_record" => 1, "rtmp_output" => 0, "epg_id" => null, "channel_id" => null, "epg_lang" => null, "tv_archive_server_id" => 0, "tv_archive_duration" => 0, "delay_minutes" => 0, "external_push" => Array(), "probesize_ondemand" => 128000);
+        $rArray = Array("type" => 1, "added" => time(),"enable_adaptive" => 0, "read_native" => 0, "stream_all" => 0, "redirect_stream" => 1, "direct_source" => 0, "gen_timestamps" => 1, "transcode_attributes" => Array(), "stream_display_name" => "", "stream_source" => Array(), "category_id" => 0, "stream_icon" => "", "notes" => "", "custom_sid" => "", "custom_ffmpeg" => "", "custom_map" => "", "transcode_profile_id" => 0, "enable_transcode" => 0, "auto_restart" => "[]", "allow_record" => 1, "rtmp_output" => 0, "epg_id" => null, "channel_id" => null, "epg_lang" => null, "tv_archive_server_id" => 0, "tv_archive_duration" => 0, "delay_minutes" => 0, "external_push" => Array(), "probesize_ondemand" => 128000);
     }
     if ((isset($_POST["days_to_restart"])) && (preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/", $_POST["time_to_restart"]))) {
         $rTimeArray = Array("days" => Array(), "at" => $_POST["time_to_restart"]);
@@ -75,6 +75,12 @@ if (isset($_POST["submit_stream"])) {
         unset($_POST["read_native"]);
     } else {
         $rArray["read_native"] = 0;
+    }
+    if (isset($_POST["enable_adaptive"])) {
+        $rArray["enable_adaptive"] = 1;
+        unset($_POST["enable_adaptive"]);
+    } else {
+        $rArray["enable_adaptive"] = 0;
     }
     if (isset($_POST["tv_archive_duration"])) {
         $rArray["tv_archive_duration"] = intval($_POST["tv_archive_duration"]);
@@ -657,6 +663,12 @@ if ($rSettings["sidebar"]) {
                                                             <label class="col-md-4 col-form-label" for="probesize_ondemand">On Demand Probesize <i data-toggle="tooltip" data-placement="top" title="" data-original-title="Adjustable probesize for ondemand streams. Adjust this setting if you experience issues with no audio." class="mdi mdi-information"></i></label>
                                                             <div class="col-md-2">
                                                                 <input type="text" class="form-control" id="probesize_ondemand" name="probesize_ondemand" value="<?php if (isset($rStream)) { echo $rStream["probesize_ondemand"]; } else { echo "128000"; } ?>">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row mb-4">
+                                                            <label class="col-md-4 col-form-label" for="enable_adaptive">Enable Adaptive Streaming <i data-toggle="tooltip" data-placement="top" title="" data-original-title="Allow FFmpeg to generate adaptive streaming it's will override transcoding options." class="mdi mdi-information"></i></label>
+                                                            <div class="col-md-2">
+                                                                <input name="enable_adaptive" id="enable_adaptive" type="checkbox" <?php if (isset($rStream)) { if ($rStream["enable_adaptive"] == 1) { echo "checked "; } } else { echo "checked "; } ?>data-plugin="switchery" class="js-switch" data-color="#039cfd"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
