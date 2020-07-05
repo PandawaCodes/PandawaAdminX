@@ -1,7 +1,7 @@
 import sys, json
 from itertools import cycle, izip
 
-rConfigPath = "/home/pandawaxtream/iptv_panel_pro/config"
+rConfigPath = "/home/xtreamcodes/iptv_xtream_codes/config"
 
 def doDecrypt():
     rDecrypt = decrypt()

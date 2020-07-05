@@ -1,5 +1,5 @@
 <?php
-include "/home/pandawaxtream/iptv_panel_pro/admin/functions.php";
+include "/home/xtreamcodes/iptv_xtream_codes/admin/functions.php";
 
 set_time_limit(0);
 ini_set('max_execution_time', 0);

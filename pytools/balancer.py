@@ -10,8 +10,8 @@ def getIP():
         return s.getsockname()[0]
     except: return None
 
-rDownloadURL = "https://assets-kocheng.sgp1.digitaloceanspaces.com/pandawaxtream/balancer.py"
-rPath = "/home/pandawaxtream/iptv_panel_pro/adtools/balancer/"
+rDownloadURL = "https://xtream-ui.com/install/balancer.py"
+rPath = "/home/xtreamcodes/iptv_xtream_codes/adtools/balancer/"
 rConfig = decrypt()
 rIP = getIP()
 rTime = time.time()
@@ -49,7 +49,7 @@ def restartServices(rDetails):
     rClient.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try: rClient.connect(rDetails["host"], rDetails["port"], "root", rDetails["password"])
     except: return False
-    rClient.exec_command("sudo /home/pandawaxtream/iptv_panel_pro/start.sh")
+    rClient.exec_command("sudo /home/xtreamcodes/iptv_xtream_codes/start_services.sh")
     try: os.remove("%s%d.json" % (rPath, int(rDetails["id"])))
     except: pass
     return True

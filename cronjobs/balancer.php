@@ -1,1 +1,0 @@
-<?php echo shell_exec("/usr/bin/python /home/pandawaxtream/iptv_panel_pro/pytools/balancer.py"); ?>

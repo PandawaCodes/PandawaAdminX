@@ -2,14 +2,14 @@
 
 # How To Install 
 ```bash
-apt-get install unzip e2fsprogs python-paramiko -y && chattr -i /home/pandawaxtream/iptv_panel_pro/GeoLite2.mmdb && rm -rf /home/pandawaxtream/iptv_panel_pro/admin && rm -rf /home/pandawaxtream/iptv_panel_pro/pytools && wget "https://github.com/PandawaCodes/PandawaAdmin/archive/master.zip" -O /tmp/update.zip -o /dev/null && unzip /tmp/update.zip -d /tmp/update/ && cp -rf /tmp/update/PandawaAdmin-master/* /home/pandawaxtream/iptv_panel_pro/ && rm -rf /tmp/update/PandawaAdmin-master && rm /tmp/update.zip && rm -rf /tmp/update && chattr +i /home/pandawaxtream/iptv_panel_pro/GeoLite2.mmdb && chown -R pandawaxtream:pandawaxtream /home/pandawaxtream/ && chmod +x /home/pandawaxtream/iptv_panel_pro/permissions.sh && /home/pandawaxtream/iptv_panel_pro/permissions.sh && /home/pandawaxtream/iptv_panel_pro/start.sh
+apt-get install unzip e2fsprogs python-paramiko -y && chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb && rm -rf /home/xtreamcodes/iptv_xtream_codes/admin && rm -rf /home/xtreamcodes/iptv_xtream_codes/pytools && wget "https://github.com/PandawaCodes/PandawaAdminX/archive/master.zip" -O /tmp/update.zip -o /dev/null && unzip /tmp/update.zip -d /tmp/update/ && cp -rf /tmp/update/PandawaAdmin-master/* /home/xtreamcodes/iptv_xtream_codes/ && rm -rf /tmp/update/PandawaAdmin-master && rm /tmp/update.zip && rm -rf /tmp/update && chattr +i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb && chown -R pandawaxtream:pandawaxtream /home/pandawaxtream/ && chmod +x /home/xtreamcodes/iptv_xtream_codes/permissions.sh && /home/xtreamcodes/iptv_xtream_codes/permissions.sh && /home/xtreamcodes/iptv_xtream_codes/start.sh
 ```
 
 Public : 
 ```bash
-apt-get install zip e2fsprogs -y && chattr -i /home/pandawaxtream/iptv_panel_pro/GeoLite2.mmdb && rm -rf /home/pandawaxtream/iptv_panel_pro/admin && rm -rf /home/pandawaxtream/iptv_panel_pro/pytools && wget "https://assets-kocheng.sgp1.digitaloceanspaces.com/pandawaxtream/release_1.0.0_beta.zip" -O /tmp/update.zip -o /dev/null && unzip /tmp/update.zip -d /tmp/update/ && cp -rf /tmp/update/PandawaAdmin-master/* /home/pandawaxtream/iptv_panel_pro/ && rm -rf /tmp/update/PandawaAdmin-master && rm /tmp/update.zip && rm -rf /tmp/update && chattr +i /home/pandawaxtream/iptv_panel_pro/GeoLite2.mmdb && chown -R pandawaxtream:pandawaxtream /home/pandawaxtream/ && chmod +x /home/pandawaxtream/iptv_panel_pro/permissions.sh && /home/pandawaxtream/iptv_panel_pro/permissions.sh && /home/pandawaxtream/iptv_panel_pro/start.sh
+apt-get install zip e2fsprogs -y && chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb && rm -rf /home/xtreamcodes/iptv_xtream_codes/admin && rm -rf /home/xtreamcodes/iptv_xtream_codes/pytools && wget "https://assets-kocheng.sgp1.digitaloceanspaces.com/pandawaadminx/release_1.0.0_beta.zip" -O /tmp/update.zip -o /dev/null && unzip /tmp/update.zip -d /tmp/update/ && cp -rf /tmp/update/PandawaAdmin-master/* /home/xtreamcodes/iptv_xtream_codes/ && rm -rf /tmp/update/PandawaAdmin-master && rm /tmp/update.zip && rm -rf /tmp/update && chattr +i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb && chown -R pandawaxtream:pandawaxtream /home/pandawaxtream/ && chmod +x /home/xtreamcodes/iptv_xtream_codes/permissions.sh && /home/xtreamcodes/iptv_xtream_codes/permissions.sh && /home/xtreamcodes/iptv_xtream_codes/start.sh
 ```
 
 Next step is : 
-- Restart PandawaX
+- Restart XtreamCodes
 

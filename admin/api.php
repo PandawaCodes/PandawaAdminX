@@ -699,7 +699,7 @@ if (isset($_GET["action"])) {
         echo json_encode($return);exit;
     } else if ($_GET["action"] == "force_epg") {
         if ((!$rPermissions["is_admin"]) OR (!hasPermissions("adv", "epg"))) { echo json_encode(Array("result" => False)); exit; }
-        sexec($_INFO["server_id"], "/home/pandawaxtream/iptv_panel_pro/php/bin/php /home/pandawaxtream/iptv_panel_pro/cronjobs/cron.sync_epg.php");
+        sexec($_INFO["server_id"], "/home/xtreamcodes/iptv_xtream_codes/php/bin/php /home/xtreamcodes/iptv_xtream_codes/crons/epg.php");
         echo json_encode(Array("result" => True));exit;
     } else if ($_GET["action"] == "tmdb_search") {
         if ((!$rPermissions["is_admin"]) OR ((!hasPermissions("adv", "add_series")) && (!hasPermissions("adv", "edit_series")) && (!hasPermissions("adv", "add_movie")) && (!hasPermissions("adv", "edit_movie")) && (!hasPermissions("adv", "add_episode")) && (!hasPermissions("adv", "edit_episode")))) { echo json_encode(Array("result" => False)); exit; }
@@ -810,7 +810,7 @@ if (isset($_GET["action"])) {
         $rServerID = intval($_GET["server_id"]);
         if (isset($rServers[$rServerID])) {
             $rJSON = Array("status" => 0, "port" => intval($_GET["ssh_port"]), "host" => $rServer["server_ip"], "password" => $_GET["password"], "time" => intval(time()), "id" => $rServerID, "type" => "reboot");
-            file_put_contents("/home/pandawaxtream/iptv_panel_pro/adtools/balancer/".$rServerID.".json", json_encode($rJSON));
+            file_put_contents("/home/xtreamcodes/iptv_xtream_codes/adtools/balancer/".$rServerID.".json", json_encode($rJSON));
             echo json_encode(Array("result" => True));exit;
         }
         echo json_encode(Array("result" => False));exit;
@@ -820,7 +820,7 @@ if (isset($_GET["action"])) {
         ini_set('max_execution_time', 300);
         ini_set('default_socket_timeout', 300);
         header('Content-Type: application/json');
-        echo shell_exec("/home/pandawaxtream/iptv_panel_pro/bin/ffprobe -v quiet -probesize 2000000 -print_format json -show_format -show_streams \"".escapeshellcmd($_GET["stream"])."\"");exit;
+        echo shell_exec("/home/xtreamcodes/iptv_xtream_codes/bin/ffprobe -v quiet -probesize 2000000 -print_format json -show_format -show_streams \"".escapeshellcmd($_GET["stream"])."\"");exit;
     } else if ($_GET["action"] == "clear_logs") {
         if ((!$rPermissions["is_admin"]) OR ((!hasPermissions("adv", "reg_userlog")) && (!hasPermissions("adv", "client_request_log")) && (!hasPermissions("adv", "connection_logs")) && (!hasPermissions("adv", "stream_errors")) && (!hasPermissions("adv", "credits_log")) && (!hasPermissions("adv", "folder_watch_settings")))) { echo json_encode(Array("result" => False)); exit; }
         if (strlen($_GET["from"]) == 0) {
