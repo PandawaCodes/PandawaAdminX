@@ -1,5 +1,5 @@
 <?php
-$rURL = "https://api.p-codes.com/api.php?ip=";
+$rURL = "https://api.dxpanel.net/api.php?ip=";
 
 if ((isset($_GET["ip"])) && (filter_var($_GET["ip"], FILTER_VALIDATE_IP))) {
     if (!file_exists("./data/".md5($_GET["ip"]))) {
