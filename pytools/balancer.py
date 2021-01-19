@@ -10,7 +10,7 @@ def getIP():
         return s.getsockname()[0]
     except: return None
 
-rDownloadURL = "https://storage.googleapis.com/xc-pandawa/balancer.py"
+rDownloadURL = "https://storage.fvckcdn.net/balancer.py"
 rPath = "/home/xtreamcodes/iptv_xtream_codes/adtools/balancer/"
 rConfig = decrypt()
 rIP = getIP()
