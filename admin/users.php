@@ -107,15 +107,13 @@ if ($rSettings["sidebar"]) {
                                             <th class="text-center">ID</th>
                                             <th>Username</th>
                                             <th>Password</th>
-                                            <th>Token</th>
                                             <th>Reseller</th>
                                             <th class="text-center">Status</th>
                                             <th class="text-center">Online</th>
                                             <th class="text-center">Trial</th>
-                                            <th class="text-center">Expiration</th>
-                                            <th class="text-center">Active</th>
+                                            <th class="text-center">Expired</th>
                                             <th class="text-center">Conns.</th>
-                                            <th class="text-center">Last Connection</th>
+                                            <th class="text-center">Last Conn</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
@@ -359,9 +357,9 @@ if ($rSettings["sidebar"]) {
                     }
                 },
                 columnDefs: [
-                    {"className": "dt-center", "targets": [0,4,5,6,7,8,9,10,11]},
-                    {"visible": false, "targets": [10]},
-                    {"orderable": false, "targets": [11]}
+                    {"className": "dt-center", "targets": [0,3,4,5,6,7,8,9,10]},
+                    {"visible": false, "targets": []},
+                    {"orderable": false, "targets": [10]}
                 ],
                 order: [[ 0, "desc" ]],
                 pageLength: <?=$rAdminSettings["default_entries"] ?: 10?>,

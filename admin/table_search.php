@@ -86,6 +86,10 @@ if ($rType == "users") {
         if (($rResult) && ($rResult->num_rows > 0)) {
             while ($rRow = $rResult->fetch_assoc()) {
                 // Format Rows
+                $rUsername = $rRow['username'];
+                if(!empty($rRow['login_token'])) {
+                    $rUsername .= "<br/> Login Code : " . $rRow["login_token"];
+                }
                 if (!$rRow["admin_enabled"]) {
                     $rStatus = '<i class="text-danger fas fa-circle"></i>';
                 } else {
@@ -120,9 +124,9 @@ if ($rType == "users") {
                     $rRow["max_connections"] = "&infin;";
                 }
 				if ((($rPermissions["is_reseller"]) && ($rPermissions["reseller_client_connection_logs"])) OR (($rPermissions["is_admin"]) && (hasPermissions("adv", "live_connections")))) {
-					$rActiveConnections = "<a href=\"./live_connections.php?user_id=".$rRow["id"]."\">".$rRow["active_connections"]."</a>";
+					$rActiveConnections = "<a href=\"./live_connections.php?user_id=".$rRow["id"]."\">".$rRow["active_connections"] . "/" . $rRow["max_connections"] ."</a>";
 				} else {
-					$rActiveConnections = $rRow["active_connections"];
+					$rActiveConnections = $rRow["active_connections"] . "/" . $rRow["max_connections"];
 				}
                 $rButtons = '<div class="btn-group">';
                 if (((strlen($rRow["admin_notes"]) > 0) && ($rPermissions["is_admin"])) OR (strlen($rRow["reseller_notes"]) > 0)) {
@@ -182,7 +186,7 @@ if ($rType == "users") {
                 } else {
                     $rLastActive = "Never";
                 }
-                $rReturn["data"][] = Array($rRow["id"], $rRow["username"], $rRow["password"], $rRow["login_token"], $rRow["owner_name"], $rStatus, $rActive, $rTrial, $rExpDate, $rActiveConnections, $rRow["max_connections"], $rLastActive, $rButtons);
+                $rReturn["data"][] = Array($rRow["id"], $rUsername, $rRow["password"], $rRow["owner_name"], $rStatus, $rActive, $rTrial, $rExpDate, $rActiveConnections, $rLastActive, $rButtons);
             }
         }
     }
