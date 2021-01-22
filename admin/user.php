@@ -355,7 +355,7 @@ if ($rSettings["sidebar"]) {
                                                             </div>
                                                             <label class="col-md-2 col-form-label" for="exp_date">Expiry <i data-toggle="tooltip" data-placement="top" title="" data-original-title="Leave blank for unlimited." class="mdi mdi-information"></i></label>
                                                             <div class="col-md-2">
-                                                                <input type="text" class="form-control text-center date" id="exp_date" name="exp_date" value="<?php if (isset($rUser)) { if (!is_null($rUser["exp_date"])) { echo date("Y-m-d", $rUser["exp_date"]); } else { echo "\" disabled=\"disabled"; } } ?>" data-toggle="date-picker" data-single-date-picker="true">
+                                                                <input type="text" class="form-control text-center datetime" id="exp_date" name="exp_date" value="<?php if (isset($rUser)) { if (!is_null($rUser["exp_date"])) { echo date("Y-m-d HH:mm", $rUser["exp_date"]); } else { echo "\" disabled=\"disabled"; } } ?>" data-toggle="date-picker" data-single-date-picker="true">
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="custom-control custom-checkbox mt-1">
