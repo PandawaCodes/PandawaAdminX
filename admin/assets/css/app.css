@@ -2836,8 +2836,8 @@ div.dt-button-info h2{
 }
 .daterangepicker select.ampmselect,.daterangepicker select.hourselect,.daterangepicker select.minuteselect,.daterangepicker select.secondselect{
     background:#fff;
-    border:1px solid #fff;
-    color:#fff
+    border:1px solid #000;
+    color:#000
 }
 .daterangepicker.show-ranges .drp-calendar.left{
     border-left:1px solid #e7eef1

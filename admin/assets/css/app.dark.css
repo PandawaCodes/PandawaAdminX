@@ -3619,7 +3619,7 @@ div.dt-button-info h2 {
 .daterangepicker select.secondselect {
     background: #4e5864;
     border: 1px solid #4e5864;
-    color: #fff
+    color: #000
 }
 
 .daterangepicker.show-ranges .drp-calendar.left {
