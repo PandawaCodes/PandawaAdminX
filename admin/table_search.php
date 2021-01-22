@@ -113,7 +113,7 @@ if ($rType == "users") {
                 }
                 if ($rRow["exp_date"]) {
                     if ($rRow["exp_date"] < time()) {
-                        $rExpDate = "<span class=\"expired\">".date("Y-m-d", $rRow["exp_date"])."</span>";
+                        $rExpDate = "<span class=\"expired\">".date("Y-m-d H:i", $rRow["exp_date"])."</span>";
                     } else {
                         $rExpDate = date("Y-m-d H:i", $rRow["exp_date"]);
                     }
