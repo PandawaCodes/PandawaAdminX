@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Work+Sans:400,500,600);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500,600,700|Work+Sans:400,500,600);
 html {
     position: relative;
     min-height: 100%
@@ -2281,14 +2281,14 @@ body {
 
 .jq-toast-single {
     padding: 15px;
-    font-family: Poppins, sans-serif;
+    font-family: Montserrat, sans-serif;
     background-color: #5089de;
     font-size: 13px;
     line-height: 22px
 }
 
 .jq-toast-single h2 {
-    font-family: Poppins, sans-serif
+    font-family: Montserrat, sans-serif
 }
 
 .jq-toast-single a {
@@ -2391,7 +2391,7 @@ body {
 }
 
 .swal2-modal {
-    font-family: Poppins, sans-serif;
+    font-family: Montserrat, sans-serif;
     -webkit-box-shadow: 0 10px 33px rgba(0, 0, 0, .1);
     box-shadow: 0 10px 33px rgba(0, 0, 0, .1)
 }
@@ -2685,7 +2685,7 @@ div.hopscotch-bubble .hopscotch-prev {
     border-color: #5089de!important;
     text-shadow: none!important;
     margin: 0 0 0 5px!important;
-    font-family: Poppins, sans-serif;
+    font-family: Montserrat, sans-serif;
     color: #fff!important;
     font-weight: 400
 }
@@ -2737,7 +2737,7 @@ div.hopscotch-bubble h3 {
 }
 
 div.hopscotch-bubble .hopscotch-content {
-    font-family: Poppins, sans-serif
+    font-family: Montserrat, sans-serif
 }
 
 .white-popup-block {
@@ -3232,7 +3232,7 @@ div.dt-button-info h2 {
 }
 
 .mapael .plotLegend text {
-    font-family: Poppins, sans-serif!important;
+    font-family: Montserrat, sans-serif!important;
     fill: #adb5bd
 }
 
@@ -3545,7 +3545,7 @@ div.dt-button-info h2 {
 }
 
 .daterangepicker {
-    font-family: Poppins, sans-serif;
+    font-family: Montserrat, sans-serif;
     border: 1px solid #4a535f;
     -webkit-box-shadow: 0 0 7px 0 rgba(28, 32, 39, .18);
     box-shadow: 0 0 7px 0 rgba(28, 32, 39, .18);
@@ -3688,7 +3688,7 @@ div.dt-button-info h2 {
 }
 
 .ql-container {
-    font-family: Poppins, sans-serif
+    font-family: Montserrat, sans-serif
 }
 
 .ql-container.ql-snow {
@@ -3701,7 +3701,7 @@ div.dt-button-info h2 {
 }
 
 .ql-toolbar {
-    font-family: Poppins, sans-serif!important
+    font-family: Montserrat, sans-serif!important
 }
 
 .ql-toolbar span {
@@ -3788,7 +3788,7 @@ div.dt-button-info h2 {
     padding: 10px 12px;
     background: #fff;
     color: #3b434e;
-    font-family: Poppins, sans-serif
+    font-family: Montserrat, sans-serif
 }
 
 .morris-hover.morris-default-style .morris-hover-row-label {
@@ -3805,7 +3805,7 @@ div.dt-button-info h2 {
 
 .britechart,
 .tick text {
-    font-family: Poppins, sans-serif;
+    font-family: Montserrat, sans-serif;
     font-size: .75rem
 }
 
@@ -3959,12 +3959,12 @@ div.dt-button-info h2 {
     color: #3b434e!important;
     font-size: 12px!important;
     line-height: 18px!important;
-    font-family: Poppins, sans-serif!important;
+    font-family: Montserrat, sans-serif!important;
     font-weight: 500!important
 }
 
 [data-plugin=knob] {
-    font-family: Poppins, sans-serif!important;
+    font-family: Montserrat, sans-serif!important;
     font-weight: 600!important
 }
 
@@ -3973,7 +3973,7 @@ div.dt-button-info h2 {
 }
 
 .apex-charts text {
-    font-family: Poppins, sans-serif!important;
+    font-family: Montserrat, sans-serif!important;
     fill: #adb5bd
 }
 
@@ -3995,7 +3995,7 @@ div.dt-button-info h2 {
 
 .apexcharts-tooltip-text,
 .apexcharts-tooltip-title {
-    font-family: Poppins, sans-serif!important
+    font-family: Montserrat, sans-serif!important
 }
 
 .apexcharts-legend-series {
@@ -4009,7 +4009,7 @@ div.dt-button-info h2 {
 
 .apexcharts-legend-text {
     color: #ced4da!important;
-    font-family: Poppins, sans-serif!important;
+    font-family: Montserrat, sans-serif!important;
     font-size: 13px!important
 }
 
@@ -4019,7 +4019,7 @@ div.dt-button-info h2 {
 
 .apexcharts-xaxis text,
 .apexcharts-yaxis text {
-    font-family: Poppins, sans-serif!important;
+    font-family: Montserrat, sans-serif!important;
     fill: #adb5bd
 }
 

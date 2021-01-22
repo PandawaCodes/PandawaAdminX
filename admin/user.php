@@ -706,9 +706,11 @@ if ($rSettings["sidebar"]) {
             $('#exp_date').daterangepicker({
                 singleDatePicker: true,
                 showDropdowns: true,
+                timePicker: true,
+                timePicker24Hour: true,
                 minDate: new Date(),
                 locale: {
-                    format: 'YYYY-MM-DD'
+                    format: 'YYYY-MM-DD HH:mm'
                 }
             });
             
