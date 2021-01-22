@@ -474,13 +474,13 @@ if (isset($_GET["action"])) {
             if ((isset($rOverride[$rData["id"]]["official_credits"])) && (strlen($rOverride[$rData["id"]]["official_credits"]) > 0)) {
                 $rData["cost_credits"] = $rOverride[$rData["id"]]["official_credits"];
             }
-            $rData["exp_date"] = date('Y-m-d', strtotime('+'.intval($rData["official_duration"]).' '.$rData["official_duration_in"]));
+            $rData["exp_date"] = date('Y-m-d H:i', strtotime('+'.intval($rData["official_duration"]).' '.$rData["official_duration_in"]));
             if (isset($_GET["user_id"])) {
                 if ($rUser = getUser($_GET["user_id"])) {
                     if(time() < $rUser["exp_date"]) {
-                        $rData["exp_date"] = date('Y-m-d', strtotime('+'.intval($rData["official_duration"]).' '.$rData["official_duration_in"], $rUser["exp_date"]));
+                        $rData["exp_date"] = date('Y-m-d H:i', strtotime('+'.intval($rData["official_duration"]).' '.$rData["official_duration_in"], $rUser["exp_date"]));
                     } else {
-                        $rData["exp_date"] = date('Y-m-d', strtotime('+'.intval($rData["official_duration"]).' '.$rData["official_duration_in"]));
+                        $rData["exp_date"] = date('Y-m-d H:i', strtotime('+'.intval($rData["official_duration"]).' '.$rData["official_duration_in"]));
                     }
                 }
             }
@@ -501,7 +501,7 @@ if (isset($_GET["action"])) {
         $rResult = $db->query("SELECT `bouquets`, `trial_credits` AS `cost_credits`, `trial_duration`, `trial_duration_in`, `max_connections`, `can_gen_mag`, `can_gen_e2`, `only_mag`, `only_e2` FROM `packages` WHERE `id` = ".intval($_GET["package_id"]).";");
         if (($rResult) && ($rResult->num_rows == 1)) {
             $rData = $rResult->fetch_assoc();
-            $rData["exp_date"] = date('Y-m-d', strtotime('+'.intval($rData["trial_duration"]).' '.$rData["trial_duration_in"]));
+            $rData["exp_date"] = date('Y-m-d H:i', strtotime('+'.intval($rData["trial_duration"]).' '.$rData["trial_duration_in"]));
             foreach (json_decode($rData["bouquets"], True) as $rBouquet) {
                 $rResult = $db->query("SELECT * FROM `bouquets` WHERE `id` = ".intval($rBouquet).";");
                 if (($rResult) && ($rResult->num_rows == 1)) {
