@@ -1618,6 +1618,11 @@ function updateSeries($rID)
     }
 }
 
+function getAdminVersion() {
+    global $rRelease, $rEarlyAccess;
+    return $rRelease . !empty($rEarlyAccess) ? "_" .$rEarlyAccess ? "";
+}
+
 function getFooter()
 {
     // Don't be a dick. Leave it.

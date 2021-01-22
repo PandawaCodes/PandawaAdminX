@@ -27,10 +27,10 @@
 		<link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
 		<?php if (!$rAdminSettings["dark_mode"]) { ?>
         <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/app.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.css?v=<?=getAdminVersion();?>" rel="stylesheet" type="text/css" />
 		<?php } else { ?>
 		<link href="assets/css/bootstrap.dark.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/app.dark.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.dark.css?v=<?=getAdminVersion();?>" rel="stylesheet" type="text/css" />
 		<?php } ?>
     </head>
     <body>
