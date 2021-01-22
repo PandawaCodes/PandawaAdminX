@@ -1620,7 +1620,7 @@ function updateSeries($rID)
 
 function getAdminVersion() {
     global $rRelease, $rEarlyAccess;
-    return $rRelease . !empty($rEarlyAccess) ? "_" .$rEarlyAccess ? "";
+    return $rRelease . !empty($rEarlyAccess) ? "_" .$rEarlyAccess : "";
 }
 
 function getFooter()
