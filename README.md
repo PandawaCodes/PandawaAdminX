@@ -9,7 +9,7 @@ Next step is :
 
 # How to Update
 ```bash
-rm -rf /home/xtreamcodes/iptv_xtream_codes/admin && rm -rf /home/xtreamcodes/iptv_xtream_codes/pytools && wget "https://github.com/PandawaCodes/PandawaAdminX/archive/master.zip" -O /tmp/update.zip -o /dev/null && unzip /tmp/update.zip -d /tmp/update/ && cp -rf /tmp/update/PandawaAdminX-master/* /home/xtreamcodes/iptv_xtream_codes/ && rm -rf /tmp/update/PandawaAdminX-master && rm /tmp/update.zip && rm -rf /tmp/update && chown -R xtreamcodes:xtreamcodes /home/xtreamcodes/ && /home/xtreamcodes/iptv_xtream_codes/permissions.sh && /home/xtreamcodes/iptv_xtream_codes/start_services.sh
+rm -rf /home/xtreamcodes/iptv_xtream_codes/admin && rm -rf /home/xtreamcodes/iptv_xtream_codes/pytools && wget "https://github.com/PandawaCodes/PandawaAdminX/archive/master.zip" -O /tmp/update.zip -o /dev/null && unzip /tmp/update.zip -d /tmp/update/ && cp -rf /tmp/update/PandawaAdminX-master/* /home/xtreamcodes/iptv_xtream_codes/ && rm -rf /tmp/update/PandawaAdminX-master && rm /tmp/update.zip && rm -rf /tmp/update && chown -R xtreamcodes:xtreamcodes /home/xtreamcodes/ && /home/xtreamcodes/iptv_xtream_codes/start_services.sh
 ```
 
 # ChangeLogs
