@@ -214,14 +214,16 @@ if (!isset($_STATUS)) {
                             <div class="card-body p-4">
                                 <div class="text-center w-75 m-auto">
                                     <?php if ($rAdminSettings["dark_mode_login"]) { ?>
-					<?php if(!empty($rAdminSettings['site_logo_back'])) { ?>
-							<span><img src="" width="200px" alt=""></span>
-					 <?php  } else { ?>
-									<span><img src="<?=$rAdminSettings['site_logo_back'];?>" width="200px" alt=""></span>
-                                    <?php } 
-										  } else { ?>
-                                    <span><img src="assets/images/logo-back.png" width="200px" alt=""></span>
-                                    <?php } ?>
+									<?php if(!empty($rAdminSettings['site_logo_back'])) { ?>
+										<span><img src="<?=$rAdminSettings['site_logo_back'];?>" width="200px" alt=""></span>
+					 				<?php  } else { ?>
+										<span><img src="assets/images/logo.png" width="200px" alt=""></span>
+                                    <?php }} else { ?>
+										  <?php if(!empty($rAdminSettings['site_logo'])) { ?>
+										<span><img src="<?=$rAdminSettings['site_logo'];?>" width="200px" alt=""></span>
+					 				<?php  } else { ?>
+                                    	<span><img src="assets/images/logo-back.png" width="200px" alt=""></span>
+									<?php }} ?>
                                     <p class="text-muted mb-4 mt-3"></p>
                                 </div>
                                 <h5 class="auth-title"><?=$_["admin_reseller_interface"]?></h5>
