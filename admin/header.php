@@ -141,10 +141,18 @@
                     <div class="logo-box">
                         <a href="<?php if ($rPermissions["is_admin"]) { ?>dashboard.php<?php } else { ?>reseller.php<?php } ?>" class="logo text-center">
                             <span class="logo-lg">
+                            <?php if(!empty($rAdminSettings['site_logo'])) { ?>
+                                <img src="<?=$rAdminSettings['site_logo'];?>" alt="" height="26">
+                            <?php } else { ?>
                                 <img src="assets/images/logo.png" alt="" height="26">
+                            <?php } ?>
                             </span>
                             <span class="logo-sm">
+                            <?php if(!empty($rAdminSettings['site_logo'])) { ?>
+                                <img src="<?=$rAdminSettings['site_logo'];?>" alt="" height="26">
+                            <?php } else { ?>
                                 <img src="assets/images/logo.png" alt="" height="28">
+                            <?php } ?>
                             </span>
                         </a>
                     </div>
